@@ -1,0 +1,180 @@
+{
+  "assessment_id": 3,
+  "learner": {
+    "id": 2,
+    "name": "Demo Learner"
+  },
+  "video": {
+    "id": 8,
+    "title": "Photosynthesis (The Dr. Binocs Show)"
+  },
+  "generated_at": "2026-10-11T11:04:38+00:00",
+  "overall_performance": {
+    "score": 1.0,
+    "max_score": 4.0,
+    "percentage": 25.0,
+    "level": "needs_work",
+    "questions": 4,
+    "correct": 1,
+    "partially_correct": 0,
+    "incorrect": 3
+  },
+  "topic_analysis": [
+    {
+      "topic": "How photosynthesis works",
+      "questions": 2,
+      "score": 1.0,
+      "max_score": 2.0,
+      "percentage": 50.0,
+      "level": "developing"
+    },
+    {
+      "topic": "Chlorophyll and oxygen for life",
+      "questions": 2,
+      "score": 0.0,
+      "max_score": 2.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    }
+  ],
+  "skill_analysis": [
+    {
+      "bloom_level": "understand",
+      "questions": 2,
+      "score": 1.0,
+      "max_score": 2.0,
+      "percentage": 50.0,
+      "level": "developing"
+    },
+    {
+      "bloom_level": "apply",
+      "questions": 1,
+      "score": 0.0,
+      "max_score": 1.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    },
+    {
+      "bloom_level": "analyze",
+      "questions": 1,
+      "score": 0.0,
+      "max_score": 1.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    }
+  ],
+  "strengths": [
+    "What the name photosynthesis means"
+  ],
+  "weaknesses": [
+    "Water from the roots as an ingredient for food",
+    "Chlorophyll as the source of the green color",
+    "Plants taking in carbon dioxide and giving out oxygen"
+  ],
+  "improvement_suggestions": [
+    "Rewatch 00:11 to 02:36 on how roots bring in water to make sugar.",
+    "Rewatch 02:25 to 03:37 on chlorophyll and the oxygen plants give out.",
+    "List what a plant takes in and gives out, then link oxygen to breathing."
+  ],
+  "ai_summary": "You know what the word photosynthesis means, but the rest of the video is still unclear. Focus next on what plants take in and give out, and where their green color comes from.",
+  "recommended_rewatch": [
+    {
+      "topic": "How photosynthesis works",
+      "from": "00:11",
+      "to": "02:36",
+      "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=11s"
+    },
+    {
+      "topic": "Chlorophyll and oxygen for life",
+      "from": "02:25",
+      "to": "03:37",
+      "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=145s"
+    }
+  ],
+  "question_breakdown": [
+    {
+      "question_id": 9,
+      "type": "mcq",
+      "topic": "How photosynthesis works",
+      "bloom_level": "understand",
+      "prompt": "Why does the name photosynthesis fit what plants do?",
+      "learner_answer": "Plants use light to put things together into food",
+      "correct_answer": "Plants use light to put things together into food",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Photo means light and synthesis means putting together. Plants use light to combine carbon dioxide and water into sugar.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "How photosynthesis works",
+        "from": "00:11",
+        "to": "02:36",
+        "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=11s"
+      }
+    },
+    {
+      "question_id": 10,
+      "type": "scenario",
+      "topic": "How photosynthesis works",
+      "bloom_level": "apply",
+      "prompt": "A plant gets plenty of sunlight and air, but nobody waters it for weeks. Which part of making food is it missing, and how would it normally get it?",
+      "learner_answer": "I think it is about how the parts connect together, but I am not sure of the details.",
+      "correct_answer": "It is missing water, which it needs along with carbon dioxide and sunlight to make sugar. It normally absorbs water through its roots.",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "The missing part is water. A plant soaks up water through its roots and uses it with sunlight and carbon dioxide to make sugar, its food.",
+      "improvement_areas": [
+        "Water as an ingredient for food",
+        "Roots absorbing water"
+      ],
+      "video_segment": {
+        "topic": "How photosynthesis works",
+        "from": "00:11",
+        "to": "02:36",
+        "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=11s"
+      }
+    },
+    {
+      "question_id": 11,
+      "type": "true_false",
+      "topic": "Chlorophyll and oxygen for life",
+      "bloom_level": "understand",
+      "prompt": "Plants look green because the sugar they make is green.",
+      "learner_answer": "True",
+      "correct_answer": "False",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"False\". The green color comes from chlorophyll, a green pigment in the chloroplasts. The sugar is the plant's food and does not make it green.",
+      "improvement_areas": [
+        "Chlorophyll and oxygen for life"
+      ],
+      "video_segment": {
+        "topic": "Chlorophyll and oxygen for life",
+        "from": "02:25",
+        "to": "03:37",
+        "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=145s"
+      }
+    },
+    {
+      "question_id": 12,
+      "type": "short_answer",
+      "topic": "Chlorophyll and oxygen for life",
+      "bloom_level": "analyze",
+      "prompt": "Plants are called the lungs of the world. How does what plants take in and give out connect them to the air humans breathe?",
+      "learner_answer": "I think it is about how the parts connect together, but I am not sure of the details.",
+      "correct_answer": "Plants take in carbon dioxide and give out oxygen. Humans breathe that oxygen, so plants keep supplying the air we need.",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "Plants take in carbon dioxide and give out oxygen, and that oxygen is what people breathe. This is why plants are called the lungs of the world.",
+      "improvement_areas": [
+        "Gases plants take in and give out",
+        "Oxygen link to human breathing"
+      ],
+      "video_segment": {
+        "topic": "Chlorophyll and oxygen for life",
+        "from": "02:25",
+        "to": "03:37",
+        "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=145s"
+      }
+    }
+  ]
+}

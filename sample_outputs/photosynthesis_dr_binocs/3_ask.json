@@ -1,0 +1,30 @@
+{
+  "question": "Why are plants green?",
+  "answerable": true,
+  "answer": "Plants look green because of chlorophyll, a green pigment found inside the chloroplasts in their leaves. The video presents this as a trivia fact: chlorophyll is what gives plants their green color. Chloroplasts are also where photosynthesis happens, turning carbon dioxide, water and sunlight into sugar and oxygen.",
+  "citations": [
+    {
+      "chunk_id": 4,
+      "video_id": 2,
+      "chunk_index": 1,
+      "topic": "Chlorophyll and plants' role",
+      "start": "02:25",
+      "end": "03:37",
+      "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=145s",
+      "score": 1.0,
+      "text": "into sugar and oxygen the sugar is then used by the plants as their food and the oxygen is given out into the atmosphere this process as a whole is called photosynthesis am I right Mr tree yes you are trivia time chlorophyll is a green pigment that is found in the chloroplast of the plant it makes the plant look green plants are often known as lungs of the world as they take in carbon dioxide and give out oxygen which the humans breathe it's time for some more sunbath so this is me zooming out tune in next time for some more fun facts n"
+    },
+    {
+      "chunk_id": 3,
+      "video_id": 2,
+      "chunk_index": 0,
+      "topic": "How photosynthesis works",
+      "start": "00:11",
+      "end": "02:36",
+      "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=11s",
+      "score": 0.6667,
+      "text": "hey there it's a lovely sunny day today so I came down for a sunbath don't look at me like that didn't your teachers tell you that sunlight is a good source of vitamin D hey don't forget that we trees and plants make a food from sunlight yes you're right Mr tree isn't the process called photosynthesis yeah come friends let's learn about photosynthesis today zoom in photosynthesis doesn't that sound like a big word well don't be bogged down by it I'll tell you what it means photo is a Greek word for light and synthesis is a Greek word for putting together now it's simple photosynthesis is using light to put things together plants use this process to make their food with the help of sunlight water and carbon dioxide did you know that plants breathe just like us you didn't well now you do plants have tiny openings called the stomata present in their leaves through which they take in carbon dioxide yes they breathe in carbon dioxide and give out oxygen they also use water and other nutrients to make food which is absorbed by by their Roots the leaves contain tiny pigments called the chloroplasts these pigments Tak in carbon dioxide water and sunlight and turn them into sugar and oxygen the sugar is then used by the plants as"
+    }
+  ],
+  "cached": false
+}

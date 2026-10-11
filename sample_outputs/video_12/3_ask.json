@@ -1,0 +1,30 @@
+{
+  "question": "What is the main idea of this video?",
+  "answerable": true,
+  "answer": "The video explains how photosynthesis works: plants use light energy to turn water and carbon dioxide into glucose (stored chemical energy), releasing oxygen along the way. It walks through where this happens (the chloroplasts, which contain the green pigment chlorophyll) and its two stages. First, the light-dependent reactions in the thylakoid membranes split water, release oxygen, and store energy in ATP and NADPH. Second, the Calvin cycle in the stroma uses that ATP and NADPH to build glucose from carbon dioxide. The video ends by noting that light intensity, carbon dioxide concentration, and temperature can each limit how fast photosynthesis happens.",
+  "citations": [
+    {
+      "chunk_id": 118,
+      "video_id": 12,
+      "chunk_index": 1,
+      "topic": "Limiting factors of photosynthesis",
+      "start": "01:06",
+      "end": "01:58",
+      "url": null,
+      "score": 1.0,
+      "text": "Instead, it uses the ATP and NADPH made in the first stage to convert carbon dioxide from the air into glucose. So the first stage captures energy, and the second stage uses that energy to build sugar. Three things can limit the rate of photosynthesis, light intensity, carbon dioxide concentration, and temperature. If any one of them is in short supply, it becomes the limiting factor, and increasing the others will not make photosynthesis go faster. For example, on a bright but very cold day, temperature is the limiting factor, because the enzymes of the Calvin cycle work slowly in the cold. To summarize, plants take in water and carbon dioxide, use light energy to make glucose, and release oxygen. Thank you for watching."
+    },
+    {
+      "chunk_id": 117,
+      "video_id": 12,
+      "chunk_index": 0,
+      "topic": "Chloroplasts and photosynthesis stages",
+      "start": "00:00",
+      "end": "01:21",
+      "url": null,
+      "score": 0.6667,
+      "text": "Welcome to this short lesson on photosynthesis. Photosynthesis is the process plants use to turn light energy into chemical energy stored in sugar. It takes place inside the chloroplasts, which are small structures found mostly in the cells of leaves. Chloroplasts contain a green pigment called chlorophyll. Chlorophyll absorbs red and blue light and reflects green light, which is why leaves look green. Photosynthesis happens in two stages. The first stage is called the light-dependent reactions. These take place in the thylacoid membranes. Here, light energy is used to split water molecules. Splitting water releases oxygen as a byproduct, and that is the oxygen we breathe. The energy captured in the stages stored in two carrier molecules, called ATP and NADPH. The second stage is called the Calvin cycle. It takes place in the stroma, the fluid that surrounds the thylacoids. The Calvin cycle does not need light directly. Instead, it uses the ATP and NADPH made in the first stage to convert carbon dioxide from the air into glucose. So the first stage captures energy, and the second stage uses that energy to build sugar."
+    }
+  ],
+  "cached": false
+}

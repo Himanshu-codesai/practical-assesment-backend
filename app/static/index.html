@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>LMS Test Console</title>
+<link rel="icon" href="/favicon.ico">
+<style>
+  /* Light theme only: white cards on a pale sky page, one blue accent. */
+  :root {
+    --page: #f1f7fd;         /* pale sky behind everything */
+    --card: #ffffff;         /* panels */
+    --tint: #f6fafe;         /* inset areas: inputs, inner cards */
+    --chip: #e4f0fc;         /* pills, bar tracks, selected rows */
+    --line: #d6e5f5;         /* borders */
+    --line-strong: #b9d3ee;  /* control borders */
+    --blue: #2472c8;         /* the one accent */
+    --blue-deep: #1a5aa3;    /* hover, links */
+    --ink: #1c2a3a;          /* main text */
+    --ink-soft: #4d5e72;     /* supporting text */
+    --ink-faint: #76879a;    /* labels, placeholders */
+    --good: #17734a; --good-bg: #e1f5ea;
+    --warn: #8a5a00; --warn-bg: #fdf0d2;
+    --bad: #b3261e;  --bad-bg: #fde9e7;
+    --radius: 10px;
+    --control-h: 40px;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body { margin: 0; background: var(--page); color: var(--ink);
+         font: 15px/1.55 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; }
+  a { color: var(--blue-deep); }
+
+  /* ---- top bar ---- */
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 14px 24px;
+           background: var(--card); border-bottom: 1px solid var(--line); }
+  header h1 { font-size: 17px; font-weight: 650; margin: 0; overflow-wrap: anywhere; }
+  header .brand { width: 26px; height: 26px; border-radius: 7px; background: var(--blue);
+                  display: grid; place-items: center; flex: none; }
+  header .brand::after { content: ""; border-style: solid; border-width: 5px 0 5px 8px;
+                         border-color: transparent transparent transparent #fff; margin-left: 2px; }
+  #health { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-width: 0; }
+  header > a { margin-left: auto; white-space: nowrap; font-weight: 500; }
+
+  /* ---- page layout ---- */
+  .layout { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 20px; align-items: start;
+            padding: 20px 24px 40px; max-width: 1360px; margin: 0 auto; }
+  .layout > * { min-width: 0; }   /* lets long content wrap instead of widening the page */
+  @media (max-width: 900px) { .layout { grid-template-columns: minmax(0, 1fr); padding: 14px 14px 32px; } }
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+           padding: 18px 20px; margin-bottom: 16px; box-shadow: 0 1px 2px rgba(26, 90, 163, .05); }
+
+  /* ---- text ---- */
+  h2 { font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: .06em;
+       color: var(--ink-faint); margin: 0 0 10px; }
+  h3 { font-size: 19px; font-weight: 650; line-height: 1.3; margin: 0; overflow-wrap: anywhere; }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 4px 0 12px; padding-left: 20px; }
+  li { margin: 3px 0; }
+  .muted { color: var(--ink-soft); } .small { font-size: 13px; }
+
+  /* ---- form controls ---- */
+  label { display: block; font-size: 13px; color: var(--ink-soft); margin: 10px 0 4px; }
+  input[type=text], input[type=number], input[type=url], select, textarea {
+    width: 100%; min-height: var(--control-h); padding: 8px 12px; border: 1px solid var(--line-strong);
+    border-radius: var(--radius); background: var(--tint); color: var(--ink); font: inherit; }
+  input::placeholder, textarea::placeholder { color: var(--ink-faint); }
+  textarea { min-height: 92px; resize: vertical; display: block; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible {
+    outline: 3px solid rgba(36, 114, 200, .28); outline-offset: 1px; border-color: var(--blue); }
+  input[type=range] { width: 100%; accent-color: var(--blue); margin: 8px 0; }
+  input[type=radio] { accent-color: var(--blue); width: 16px; height: 16px; flex: none; margin: 3px 0 0; }
+
+  button { font: inherit; font-weight: 550; min-height: var(--control-h); padding: 0 16px; cursor: pointer;
+           border-radius: var(--radius); border: 1px solid var(--blue); background: var(--blue); color: #fff;
+           display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap;
+           transition: background .12s, border-color .12s, color .12s; }
+  button:hover:not(:disabled) { background: var(--blue-deep); border-color: var(--blue-deep); }
+  button.ghost { background: var(--card); color: var(--blue-deep); border-color: var(--line-strong); }
+  button.ghost:hover:not(:disabled) { background: var(--chip); border-color: var(--blue); }
+  button.danger { background: var(--card); color: var(--bad); border-color: #e9b9b5; min-height: 34px;
+                  padding: 0 12px; font-size: 13px; white-space: normal; text-align: left; }
+  button.danger:hover:not(:disabled) { background: var(--bad-bg); border-color: var(--bad); }
+  button.danger.sure, button.danger.sure:hover:not(:disabled) { background: var(--bad); color: #fff; border-color: var(--bad); }
+  button:disabled { opacity: .55; cursor: default; }
+
+  .stack > * + * { margin-top: 8px; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; }
+  .row > .grow { flex: 1 1 200px; min-width: 0; }
+  .row label { margin: 0 0 4px; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 16px; }
+
+  .or { display: flex; align-items: center; gap: 10px; margin: 14px 0; font-size: 13px;
+        color: var(--ink-faint); }
+  .or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .hint { font-size: 13px; color: var(--ink-faint); margin: 12px 0 0; }
+
+  /* ---- small pieces ---- */
+  .pill { display: inline-flex; align-items: center; min-height: 24px; padding: 2px 10px; border-radius: 999px;
+          font-size: 12px; font-weight: 550; line-height: 1.3; background: var(--chip); color: var(--blue-deep);
+          max-width: 100%; overflow-wrap: anywhere; }
+  a.pill.link { background: var(--blue); color: #fff; text-decoration: none; gap: 5px; }
+  a.pill.link:hover { background: var(--blue-deep); }
+  .pill.good { background: var(--good-bg); color: var(--good); }
+  .pill.plain { background: transparent; color: var(--ink-faint); border: 1px solid var(--line); }
+  .pill.warn { background: var(--warn-bg); color: var(--warn); }
+  .pill.bad { background: var(--bad-bg); color: var(--bad); }
+  /* align-items: center keeps pills their own height when a taller item shares the row */
+  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .spin { display: inline-block; width: 14px; height: 14px; flex: none; border: 2px solid var(--chip);
+          border-top-color: var(--blue); border-radius: 50%; animation: spin .8s linear infinite;
+          vertical-align: -2px; margin-right: 6px; }
+  button .spin { border-color: rgba(255, 255, 255, .45); border-top-color: #fff; margin-right: 0; }
+  button.ghost .spin, button.danger .spin { border-color: var(--chip); border-top-color: var(--blue); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ---- video list (sidebar) ---- */
+  .videos button { display: block; width: 100%; min-height: 0; text-align: left; white-space: normal;
+                   margin-top: 8px; padding: 10px 12px; font-weight: 500;
+                   background: var(--tint); color: var(--ink); border-color: var(--line); }
+  .videos button:hover:not(:disabled) { background: var(--chip); border-color: var(--line-strong); }
+  .videos button.on, .videos button.on:hover:not(:disabled) { background: var(--chip); border-color: var(--blue); }
+  .videos .name { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+                  overflow-wrap: anywhere; }
+  .videos .state { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 6px; }
+
+  /* ---- video header and tabs ---- */
+  .video-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px 16px;
+                flex-wrap: wrap; margin-bottom: 10px; }
+  .video-head h3 { flex: 1 1 260px; min-width: 0; }
+  .tabs { display: flex; gap: 2px; margin: 14px 0 18px; border-bottom: 1px solid var(--line);
+          overflow-x: auto; scrollbar-width: thin; }
+  .tabs button { background: transparent; color: var(--ink-soft); border: 0; border-radius: 8px 8px 0 0;
+                 border-bottom: 2px solid transparent; padding: 0 14px; font-weight: 500; flex: none; }
+  .tabs button:hover:not(:disabled) { background: var(--tint); color: var(--blue-deep); border-color: transparent; }
+  .tabs button.on, .tabs button.on:hover:not(:disabled) { color: var(--blue-deep); font-weight: 650;
+                 border-bottom-color: var(--blue); background: transparent; }
+
+  /* ---- content cards ---- */
+  .card { background: var(--tint); border: 1px solid var(--line); border-radius: var(--radius);
+          padding: 14px 16px; margin-top: 10px; overflow-wrap: anywhere; }
+  .card .meta { margin-bottom: 8px; }
+  .option { display: flex; gap: 10px; align-items: flex-start; padding: 7px 8px; margin: 2px -8px;
+            border-radius: 8px; cursor: pointer; font-size: 15px; color: var(--ink); }
+  .option:hover { background: var(--chip); }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 28px; }
+  .cols > * { min-width: 0; }
+  p + .cols { margin-top: 20px; }
+  .section { margin-top: 22px; }
+
+  /* ---- transcript ---- */
+  .lines { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 14px;
+           max-height: 62vh; overflow-y: auto; padding: 14px 16px; background: var(--tint);
+           border: 1px solid var(--line); border-radius: var(--radius); overflow-wrap: anywhere; }
+  .lines .time { font-variant-numeric: tabular-nums; font-size: 13px; color: var(--ink-faint);
+                 padding-top: 2px; text-decoration: none; }
+  .lines a.time { color: var(--blue-deep); }
+  .lines a.time:hover { text-decoration: underline; }
+
+  /* ---- report ---- */
+  .score-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+  .score { font-size: 40px; font-weight: 700; line-height: 1.1; color: var(--blue-deep);
+           font-variant-numeric: tabular-nums; }
+  .bars { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(60px, 1fr) auto; gap: 10px 12px;
+          align-items: center; }
+  .bars .name { overflow-wrap: anywhere; }
+  .bars .value { display: flex; align-items: center; justify-content: flex-end; gap: 8px; white-space: nowrap;
+                 font-variant-numeric: tabular-nums; }
+  .bar { height: 8px; background: var(--chip); border-radius: 999px; overflow: hidden; }
+  .bar > div { height: 100%; background: var(--blue); border-radius: 999px; }
+
+  /* ---- learner picker: one button that opens a menu ---- */
+  .icon { display: inline-flex; flex: none; }
+  .picker { position: relative; }
+  .picker-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .picker-toggle { width: 100%; justify-content: space-between; padding: 0 12px; font-weight: 500;
+                   background: var(--tint); color: var(--ink); border-color: var(--line-strong); }
+  .picker-toggle:hover:not(:disabled) { background: var(--chip); border-color: var(--blue); }
+  .picker-menu { position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 5; padding: 6px;
+                 max-height: 340px; overflow-y: auto; background: var(--card);
+                 border: 1px solid var(--line-strong); border-radius: var(--radius);
+                 box-shadow: 0 8px 24px rgba(28, 42, 58, .14); }
+  .picker-row { display: flex; align-items: center; gap: 4px; border-radius: 8px; }
+  .picker-row + .picker-row { margin-top: 2px; }
+  .picker-row.on { background: var(--chip); }
+  .picker-row button { min-height: 36px; }
+  .picker-pick { flex: 1; min-width: 0; justify-content: flex-start; padding: 0 10px; font-weight: 500;
+                 background: transparent; color: var(--ink); border-color: transparent; }
+  .picker-pick:hover:not(:disabled) { background: var(--chip); border-color: transparent; }
+  .picker-row.on .picker-pick { font-weight: 650; color: var(--blue-deep); }
+  .picker-del { flex: none; width: 36px; padding: 0; background: transparent; color: var(--ink-faint);
+                border-color: transparent; }
+  .picker-del:hover:not(:disabled) { background: var(--bad-bg); color: var(--bad); border-color: transparent; }
+  .picker-row.confirm { gap: 6px; padding: 4px 4px 4px 10px; background: var(--bad-bg); }
+  .picker-row.confirm .picker-name { flex: 1; font-size: 14px; color: var(--bad); font-weight: 550; }
+  .picker-row.confirm button { min-height: 32px; padding: 0 10px; font-size: 13px; white-space: nowrap; flex: none; }
+  .picker-note { margin: 6px 4px 0; }
+  .picker-add { display: flex; gap: 6px; margin-top: 6px; padding-top: 8px; border-top: 1px solid var(--line); }
+  .picker-add input[type=text] { flex: 1; min-width: 0; min-height: 36px; }
+  .picker-add button { min-height: 36px; flex: none; }
+
+  #toast { position: fixed; right: 20px; bottom: 20px; max-width: min(420px, calc(100vw - 40px)); z-index: 10;
+           padding: 12px 16px; border-radius: var(--radius); background: var(--card); color: var(--bad);
+           border: 1px solid #e9b9b5; border-left: 4px solid var(--bad);
+           box-shadow: 0 6px 20px rgba(28, 42, 58, .12); display: none; overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<header>
+  <span class="brand" aria-hidden="true"></span>
+  <h1 id="title">LMS Test Console</h1>
+  <div id="health" class="small muted">checking…</div>
+  <a href="/docs" target="_blank" rel="noopener">API docs</a>
+</header>
+<div class="layout">
+  <aside id="side"></aside>
+  <main id="main"></main>
+</div>
+<div id="toast" role="alert"></div>
+
+<script>
+// A test console for the LMS API. Plain JavaScript, no build step. Every action is one
+// REST call to the same API that scripts/demo.py uses.
+
+const S = {
+  learners: [], learnerId: null,   // the learner whose progress, quiz and report are shown
+  videos: [], videoId: null, videoJobs: {},   // videoJobs: video id -> ingest job, when known
+  tab: 'overview',
+  search: null, ask: null, q: '', askQ: '', k: 3, mode: 'hybrid',
+  transcript: null,       // {video_id, source, segments} | {video_id, loading} | {video_id, error}
+  progress: null, percent: 50,
+  assessment: null, assessJob: null, answers: {}, result: null, report: null,
+  busy: {}, confirmDelete: null,
+  learnerOpen: false, confirmLearner: null, newLearner: '',   // the learner menu
+  mine: {},               // video id -> this learner's progress and quiz status
+};
+const PROPS = new Set(['value', 'checked', 'disabled', 'selected']);
+
+// el('div', {class: 'x', onclick: fn}, child, 'text') -> DOM node. Text is never parsed as HTML.
+function el(tag, attrs = {}, ...kids) {
+  const node = document.createElement(tag);
+  for (const [key, value] of Object.entries(attrs || {})) {
+    if (key.startsWith('on')) node.addEventListener(key.slice(2), value);
+    else if (PROPS.has(key)) node[key] = value;
+    else if (key === 'class') node.className = value;
+    else if (value !== false && value != null) node.setAttribute(key, value === true ? '' : value);
+  }
+  for (const kid of kids.flat(Infinity)) {
+    if (kid == null || kid === false) continue;
+    node.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+  }
+  return node;
+}
+const $ = (id) => document.getElementById(id);
+const store = {
+  get(key) { try { return localStorage.getItem(key); } catch { return null; } },
+  set(key, value) { try { localStorage.setItem(key, value); } catch { /* optional */ } },
+};
+
+async function api(method, path, body, isForm) {
+  const options = { method, headers: {} };
+  if (body && isForm) options.body = body;
+  else if (body) { options.headers['content-type'] = 'application/json'; options.body = JSON.stringify(body); }
+  const response = await fetch(path, options);
+  const text = await response.text();
+  let data = null;
+  try { data = text ? JSON.parse(text) : null; } catch { /* not JSON */ }
+  if (!response.ok) {
+    const detail = data && data.detail;
+    throw new Error((data && data.error && data.error.message)
+      || (Array.isArray(detail) ? detail.map((d) => d.msg).join('; ') : detail)
+      || `${response.status} ${response.statusText}`);
+  }
+  return data;
+}
+
+let toastTimer;
+function toast(message) {
+  $('toast').textContent = message;
+  $('toast').style.display = 'block';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { $('toast').style.display = 'none'; }, 7000);
+}
+
+// Run an action with a busy flag (disables its button, shows a spinner) and error toast.
+// The sidebar forms are left alone so nothing the user typed there is lost.
+async function run(key, action) {
+  if (S.busy[key]) return;
+  S.busy[key] = true; renderMain();
+  try { await action(); } catch (error) { toast(error.message); }
+  S.busy[key] = false; renderVideoList(); renderMain();
+}
+// For sidebar buttons: on success the forms are rebuilt (cleared), on error they are kept.
+async function runSide(button, action) {
+  const label = button.textContent;
+  button.disabled = true; button.textContent = 'Working…';
+  try { await action(); renderSide(); } catch (error) {
+    toast(error.message); button.disabled = false; button.textContent = label;
+  }
+  renderMain();
+}
+const spinner = (key, label) => (S.busy[key] ? [el('span', { class: 'spin' }), label] : label);
+
+function pill(status) {
+  const kind = ['ready', 'succeeded', 'evaluated', 'correct', 'strong', 'ok'].includes(status) ? 'good'
+    : ['failed', 'incorrect', 'needs_work', 'degraded'].includes(status) ? 'bad'
+    : ['pending', 'processing', 'queued', 'running', 'generating', 'submitted',
+       'partially_correct', 'developing'].includes(status) ? 'warn' : '';
+  return el('span', { class: `pill ${kind}` }, String(status).replace(/_/g, ' '));
+}
+const currentVideo = () => S.videos.find((v) => v.id === S.videoId) || null;
+const duration = (seconds) => (seconds ? `${Math.floor(seconds / 60)}m ${Math.round(seconds % 60)}s` : '–');
+
+// ---------- data ----------
+async function loadVideos() { S.videos = await api('GET', '/videos'); }
+
+// The learner's own standing on each video: watch progress, quiz status, score.
+async function loadMine() {
+  S.mine = {};
+  if (!S.learnerId) return;
+  for (const row of await api('GET', `/learners/${S.learnerId}/progress`)) S.mine[row.video_id] = row;
+}
+function mineLabel(videoId) {
+  if (!S.learnerId) return null;
+  const row = S.mine[videoId];
+  if (!row) return el('span', { class: 'pill plain' }, 'not started');
+  const text = {
+    generating: 'quiz being written', ready: 'quiz ready', submitted: 'being graded',
+    failed: 'quiz failed', evaluated: `scored ${row.score_percentage}%`,
+  }[row.assessment_status] || `watched ${row.percent_watched}%`;
+  const kind = row.assessment_status === 'evaluated' ? 'good' : row.assessment_status === 'failed' ? 'bad'
+    : row.assessment_status ? 'warn' : 'plain';
+  return el('span', { class: `pill ${kind}` }, text);
+}
+async function loadAssessment() {
+  S.assessment = null; S.assessJob = null; S.answers = {}; S.result = null; S.report = null;
+  S.progress = null;
+  await loadMine();
+  if (!S.learnerId || !S.videoId) return;
+  const found = await api('GET', `/assessments?learner_id=${S.learnerId}&video_id=${S.videoId}`);
+  if (found.length) await setAssessment(found[0]);
+}
+async function setAssessment(assessment) {
+  S.assessment = assessment;
+  await loadMine();
+  if (assessment.status === 'evaluated') {
+    S.result = await api('GET', `/assessments/${assessment.id}/result`);
+    S.report = await api('GET', `/assessments/${assessment.id}/report`);
+  }
+}
+async function selectVideo(id) {
+  S.videoId = id; store.set('videoId', id); S.tab = 'overview'; S.confirmDelete = null;
+  S.search = null; S.ask = null; S.q = ''; S.askQ = ''; S.transcript = null;
+  try { await loadAssessment(); } catch (error) { toast(error.message); }
+  renderVideoList(); renderMain();
+}
+// ---------- learners ----------
+// Videos are shared. Switching learner only changes whose progress, quiz and report are shown.
+const TRASH = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>';
+const CHEVRON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+function icon(svg) { const span = el('span', { class: 'icon' }); span.innerHTML = svg; return span; }
+
+async function selectLearner(id) {
+  S.learnerId = id; store.set('learnerId', id); S.learnerOpen = false; S.confirmLearner = null;
+  try { await loadAssessment(); } catch (error) { toast(error.message); }
+  renderLearners(); renderVideoList(); renderMain();
+}
+async function removeLearner(id) {
+  try {
+    await api('DELETE', `/learners/${id}`);
+    S.learners = S.learners.filter((l) => l.id !== id);
+    S.confirmLearner = null;
+    if (id === S.learnerId) await selectLearner(S.learners[0].id); else renderLearners();
+  } catch (error) { toast(error.message); S.confirmLearner = null; renderLearners(); }
+}
+function closeLearnerMenu() {
+  if (!S.learnerOpen) return;
+  S.learnerOpen = false; S.confirmLearner = null; renderLearners();
+}
+document.addEventListener('click', (e) => { if (!e.target.closest('.picker')) closeLearnerMenu(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLearnerMenu(); });
+
+// One control: the button shows the current learner; its menu lists every learner with a
+// delete icon, and has the "new learner" box at the bottom.
+function renderLearners() {
+  if (!$('lpanel')) return;
+  const current = S.learners.find((l) => l.id === S.learnerId);
+  const toggle = el('button', { class: 'picker-toggle', 'aria-haspopup': 'true', 'aria-expanded': String(S.learnerOpen),
+    onclick: () => { S.learnerOpen = !S.learnerOpen; S.confirmLearner = null; renderLearners(); } },
+    el('span', { class: 'picker-name' }, current ? current.name : 'Choose a learner'), icon(CHEVRON));
+
+  let menu = null;
+  if (S.learnerOpen) {
+    const nameInput = el('input', { type: 'text', 'aria-label': 'New learner name', placeholder: 'New learner name',
+      maxlength: 200, value: S.newLearner, oninput: (e) => { S.newLearner = e.target.value; } });
+    const addButton = el('button', {}, 'Add');
+    const add = async () => {
+      const name = nameInput.value.trim();
+      if (!name) { toast('Type a name for the new learner.'); return; }
+      addButton.disabled = true;
+      try {
+        const learner = await api('POST', '/learners', { name });
+        S.learners.push(learner); S.newLearner = '';
+        await selectLearner(learner.id);
+      } catch (error) { toast(error.message); addButton.disabled = false; }
+    };
+    addButton.addEventListener('click', add);
+    nameInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') add(); });
+
+    const row = (l) => (S.confirmLearner === l.id
+      // The delete icon was clicked: the row asks once before deleting.
+      ? el('div', { class: 'picker-row confirm' },
+          el('span', { class: 'picker-name' }, `Delete ${l.name}?`),
+          el('button', { class: 'danger sure', onclick: () => removeLearner(l.id) }, 'Delete'),
+          el('button', { class: 'ghost', onclick: () => { S.confirmLearner = null; renderLearners(); } }, 'Cancel'))
+      : el('div', { class: `picker-row${l.id === S.learnerId ? ' on' : ''}` },
+          el('button', { class: 'picker-pick', onclick: () => selectLearner(l.id) },
+            el('span', { class: 'picker-name' }, l.name)),
+          // The last learner cannot be deleted from here.
+          S.learners.length > 1 ? el('button', { class: 'picker-del', title: `Delete ${l.name}`,
+            'aria-label': `Delete ${l.name}`, onclick: () => { S.confirmLearner = l.id; renderLearners(); } },
+            icon(TRASH)) : null));
+    menu = el('div', { class: 'picker-menu' },
+      S.learners.map(row),
+      S.confirmLearner ? el('p', { class: 'hint picker-note' }, 'Their progress, quizzes and reports are deleted. Videos stay.') : null,
+      el('div', { class: 'picker-add' }, nameInput, addButton));
+  }
+  $('lpanel').replaceChildren(
+    el('h2', {}, 'Learner'),
+    el('div', { class: 'picker' }, toggle, menu),
+    el('p', { class: 'hint' }, 'Videos are shared. Progress, quiz and report belong to the selected learner.'));
+}
+
+// ---------- sidebar ----------
+function renderSide() {
+  const urlInput = el('input', { type: 'url', id: 'vUrl', 'aria-label': 'Video link',
+    placeholder: 'Paste a video link' });
+  const addButton = el('button', { style: 'width:100%' }, 'Add video');
+  // The real file input is hidden; the button below opens it, and choosing a file uploads it.
+  const fileInput = el('input', { type: 'file', id: 'vFile', hidden: true,
+    accept: '.srt,.vtt,.txt,.mp4,.mkv,.webm,.mov,.mp3,.m4a,.wav,.ogg,.flac' });
+  const uploadButton = el('button', { class: 'ghost', style: 'width:100%' }, 'Upload a file');
+
+  const addLink = () => runSide(addButton, async () => {
+    const source_url = urlInput.value.trim();
+    if (!source_url) throw new Error('Paste a video link first.');
+    if (!/^https?:\/\//i.test(source_url)) throw new Error('That does not look like a link. It should start with https://');
+    // No title is sent: the server uses the video's own title.
+    await afterAccepted(await api('POST', '/videos', { source_url }));
+  });
+  addButton.addEventListener('click', addLink);
+  urlInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') addLink(); });
+
+  uploadButton.addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+    runSide(uploadButton, async () => {
+      const form = new FormData();
+      form.append('title', file.name.replace(/\.[^.]+$/, ''));   // the file name without ".mp4"
+      form.append('file', file);
+      await afterAccepted(await api('POST', '/videos/upload', form, true));
+    });
+  });
+
+  $('side').replaceChildren(
+    el('div', { class: 'panel', id: 'lpanel' }),
+    el('div', { class: 'panel' },
+      el('h2', {}, 'Add a video'),
+      el('div', { class: 'stack' }, urlInput, addButton),
+      el('div', { class: 'or' }, 'or'),
+      fileInput, uploadButton,
+      el('p', { class: 'hint' }, 'A YouTube link, or a video, audio or transcript file.')),
+
+    el('div', { class: 'panel videos', id: 'vlist' }),
+  );
+  renderLearners();
+  renderVideoList();
+}
+function renderVideoList() {
+  if (!$('vlist')) return;
+  // Built through el() so that null entries and arrays are handled, then moved across.
+  $('vlist').replaceChildren(...el('div', {},
+    el('h2', {}, `History (${S.videos.length})`),
+    S.videos.length ? null : el('div', { class: 'muted small' }, 'Nothing yet. Videos you add appear here with the selected learner’s quiz result.'),
+    S.videos.map((v) => {
+      const job = S.videoJobs[v.id];
+      const working = ['pending', 'processing'].includes(v.status);
+      return el('button', { class: v.id === S.videoId ? 'on' : '', onclick: () => selectVideo(v.id) },
+        el('div', { class: 'name' }, v.title),
+        el('div', { class: 'state small' }, v.status === 'ready' ? mineLabel(v.id) : pill(v.status),
+          working && job && job.stage ? el('span', { class: 'muted' }, `stage: ${job.stage}`) : null));
+    })).childNodes);
+}
+async function afterAccepted(accepted) {
+  S.videoJobs[accepted.video.id] = accepted.job;
+  await loadVideos();
+  await selectVideo(accepted.video.id);
+}
+
+// ---------- main panel ----------
+function renderMain() {
+  const video = currentVideo();
+  if (!video) {
+    $('main').replaceChildren(el('div', { class: 'panel' },
+      el('h3', {}, 'How to use this console'),
+      el('ol', {},
+        el('li', {}, 'Add a video on the left and wait until its status is “ready”.'),
+        el('li', {}, 'Select the video to search it, ask questions, and report watch progress.'),
+        el('li', {}, 'Crossing the completion threshold generates an assessment. Answer it and submit.'),
+        el('li', {}, 'Open the Report tab for the evaluation and learning report.'))));
+    return;
+  }
+  const tabs = [['overview', 'Overview'], ['transcript', 'Transcript'], ['explore', 'Search & Ask'],
+    ['assess', 'Watch & Assessment'], ['report', 'Report']];
+  const body = { overview: viewOverview, transcript: viewTranscript, explore: viewExplore,
+    assess: viewAssess, report: viewReport }[S.tab](video);
+  $('main').replaceChildren(el('div', { class: 'panel' },
+    el('div', { class: 'video-head' }, el('h3', {}, video.title), deleteButton(video)),
+    el('div', { class: 'meta small' }, pill(video.status),
+      el('span', { class: 'pill' }, `transcript: ${video.transcript_source || 'pending'}`),
+      el('span', { class: 'pill' }, `length: ${duration(video.duration_seconds)}`),
+      video.source_url ? el('a', { href: video.source_url, target: '_blank', rel: 'noopener' }, 'Open video') : null),
+    el('div', { class: 'tabs', role: 'tablist' }, tabs.map(([key, label]) =>
+      el('button', { class: S.tab === key ? 'on' : '', role: 'tab', onclick: () => { S.tab = key; S.confirmDelete = null; renderMain(); if (key === 'transcript') openTranscript(video); } }, label))),
+    body));
+}
+
+// Two clicks instead of a browser dialog: the first arms the button, the second deletes.
+function deleteButton(video) {
+  const armed = S.confirmDelete === video.id;
+  return el('button', { class: `danger${armed ? ' sure' : ''}`, disabled: !!S.busy.del,
+    onclick: () => {
+      if (!armed) { S.confirmDelete = video.id; renderMain(); return; }
+      run('del', async () => {
+        await api('DELETE', `/videos/${video.id}`);
+        delete S.videoJobs[video.id];
+        S.confirmDelete = null; S.videoId = null; store.set('videoId', '');
+        S.assessment = null; S.result = null; S.report = null; S.search = null; S.ask = null;
+        await loadVideos();
+      });
+    } }, spinner('del', armed ? 'Click again to delete everything for this video' : 'Delete video'));
+}
+
+function notReady(video) {
+  const job = S.videoJobs[video.id];
+  if (video.status === 'failed') {
+    return el('div', {}, el('div', { class: 'card' }, el('strong', {}, 'Processing failed: '), video.error || 'unknown error'),
+      job ? el('button', { style: 'margin-top:10px', disabled: !!S.busy.retry, onclick: () => run('retry', async () => {
+        S.videoJobs[video.id] = await api('POST', `/jobs/${job.id}/retry`);
+        await loadVideos();
+      }) }, 'Retry') : null);
+  }
+  return el('div', { class: 'muted' }, el('span', { class: 'spin' }),
+    `Processing${job && job.stage ? ` (stage: ${job.stage})` : ''}… this page updates by itself.`,
+    job && job.error ? el('div', { class: 'small' }, job.error) : null);
+}
+
+function viewOverview(video) {
+  if (video.status !== 'ready') return notReady(video);
+  return el('div', {},
+    el('h2', {}, 'AI summary'), el('p', {}, video.summary || '–'),
+    el('h2', { class: 'section' }, 'Topics'),
+    (video.topics || []).map((t) => el('div', { class: 'card' }, el('strong', {}, t.name), el('div', { class: 'muted' }, t.summary))));
+}
+
+// The transcript is fetched the first time its tab is opened, then kept for that video.
+async function openTranscript(video) {
+  if (S.transcript && S.transcript.video_id === video.id && !S.transcript.error) return;
+  S.transcript = { video_id: video.id, loading: true };
+  renderMain();
+  try { S.transcript = await api('GET', `/videos/${video.id}/transcript`); }
+  catch (error) { S.transcript = { video_id: video.id, error: error.message }; }
+  if (S.tab === 'transcript' && S.videoId === video.id) renderMain();
+}
+
+function viewTranscript(video) {
+  const t = S.transcript;
+  if (!t || t.video_id !== video.id || t.loading) {
+    return el('div', { class: 'muted' }, el('span', { class: 'spin' }), 'Loading the transcript…');
+  }
+  if (t.error) {
+    return el('div', {}, el('div', { class: 'card' }, t.error),
+      el('div', { class: 'actions' }, el('button', { class: 'ghost', onclick: () => openTranscript(video) }, 'Try again')));
+  }
+  const from = { captions: 'YouTube captions', whisper: 'speech-to-text (Whisper) on the audio',
+    file: 'the uploaded transcript file' }[t.source] || t.source;
+  const words = t.segments.reduce((n, line) => n + line.text.split(/\s+/).length, 0);
+  return el('div', {},
+    el('h2', {}, 'Transcript'),
+    el('p', { class: 'muted' }, `Taken from ${from}. ${t.segments.length} lines, about ${words} words. `,
+      'This is the raw text before it is cut into chunks.'),
+    el('div', { class: 'lines' }, t.segments.map((line) => [
+      line.url
+        ? el('a', { class: 'time', href: line.url, target: '_blank', rel: 'noopener', title: 'Open the video at this line' }, line.start)
+        : el('span', { class: 'time' }, line.start),
+      el('div', {}, line.text)])));
+}
+
+function hitCard(hit) {
+  return el('div', { class: 'card' },
+    el('div', { class: 'meta small' },
+      hit.url
+        ? el('a', { class: 'pill link', href: hit.url, target: '_blank', rel: 'noopener',
+            title: 'Open the video at this point' }, `\u25B6 Watch ${hit.start} – ${hit.end}`)
+        : el('span', { class: 'pill' }, `${hit.start} – ${hit.end}`),
+      hit.topic ? el('span', { class: 'pill' }, hit.topic) : null,
+      el('span', { class: 'pill' }, `score ${hit.score}`)),
+    hit.text);
+}
+
+function viewExplore(video) {
+  if (video.status !== 'ready') return notReady(video);
+  const query = el('input', { type: 'text', id: 'q', placeholder: 'e.g. what does the sigmoid function do',
+    value: S.q, oninput: (e) => { S.q = e.target.value; } });
+  const topK = el('input', { type: 'number', id: 'k', min: 1, max: 20, value: S.k, style: 'width:80px',
+    oninput: (e) => { S.k = Number(e.target.value) || 3; } });
+  const modes = [['hybrid', 'Hybrid (meaning + keywords)'], ['dense', 'Meaning only'], ['keyword', 'Keywords only']];
+  const mode = el('select', { id: 'mode', style: 'width:230px', onchange: (e) => { S.mode = e.target.value; } },
+    modes.map(([value, label]) => el('option', { value, selected: value === S.mode }, label)));
+  const question = el('input', { type: 'text', id: 'ask', placeholder: 'Ask a question about this video',
+    value: S.askQ, oninput: (e) => { S.askQ = e.target.value; } });
+  const doSearch = () => run('search', async () => {
+    if (S.q.trim().length < 2) throw new Error('Type a search query first.');
+    const body = { query: S.q.trim(), top_k: S.k };
+    body.mode = S.mode;
+    S.search = await api('POST', `/videos/${video.id}/search`, body);
+  });
+  const doAsk = () => run('ask', async () => {
+    if (S.askQ.trim().length < 2) throw new Error('Type a question first.');
+    S.ask = await api('POST', `/videos/${video.id}/ask`, { question: S.askQ.trim() });
+  });
+  query.addEventListener('keydown', (e) => { if (e.key === 'Enter') doSearch(); });
+  question.addEventListener('keydown', (e) => { if (e.key === 'Enter') doAsk(); });
+
+  return el('div', {},
+    el('h2', {}, 'Retrieval: find the relevant part of the video'),
+    el('div', { class: 'row' }, el('div', { class: 'grow' }, el('label', { for: 'q' }, 'Search query'), query),
+      el('div', {}, el('label', { for: 'k' }, 'Results'), topK),
+      el('div', {}, el('label', { for: 'mode' }, 'Search method'), mode),
+      el('button', { disabled: !!S.busy.search, onclick: doSearch }, spinner('search', 'Search')),
+      el('button', { class: 'ghost', disabled: !!S.busy.search, title: 'Clear the query and results',
+        onclick: () => { S.q = ''; S.search = null; renderMain(); } }, 'Clear')),
+    S.search ? [el('div', { class: 'small muted', style: 'margin-top:8px' },
+      `${S.search.results.length} result(s)${S.search.mode ? ` · mode: ${S.search.mode}` : ''}`),
+      S.search.results.map(hitCard)] : null,
+
+    el('h2', { class: 'section' }, 'RAG: answer from the video, with citations'),
+    el('div', { class: 'row' }, el('div', { class: 'grow' }, el('label', { for: 'ask' }, 'Your question'), question),
+      el('button', { disabled: !!S.busy.ask, onclick: doAsk }, spinner('ask', 'Ask')),
+      el('button', { class: 'ghost', disabled: !!S.busy.ask, title: 'Clear the question and answer',
+        onclick: () => { S.askQ = ''; S.ask = null; renderMain(); } }, 'Clear')),
+    S.busy.ask ? el('div', { class: 'small muted', style: 'margin-top:8px' }, 'Calling the model. This can take up to a minute.') : null,
+    S.ask ? [el('div', { class: 'card' },
+      S.ask.answerable ? null : el('div', { class: 'meta' }, el('span', { class: 'pill warn' }, 'not covered in this video')),
+      S.ask.cached ? el('div', { class: 'meta' }, el('span', { class: 'pill plain' }, 'saved answer, asked before')) : null,
+      S.ask.answer),
+      S.ask.citations.length ? el('div', { class: 'small muted', style: 'margin-top:10px' }, 'Cited passages') : null,
+      S.ask.citations.map(hitCard)] : null);
+}
+
+function viewAssess(video) {
+  if (video.status !== 'ready') return notReady(video);
+  const a = S.assessment;
+
+  if (!a) {
+    const threshold = S.progress && S.progress.threshold;
+    const label = el('strong', { id: 'pctLabel' }, `${S.percent}%`);
+    return el('div', {},
+      el('h2', {}, 'Simulate watching'),
+      el('p', { class: 'muted' }, 'A real player would report this as the learner watches. ',
+        threshold ? `An assessment is generated once progress reaches ${threshold}%.`
+                  : 'An assessment is generated once progress reaches the completion threshold.'),
+      el('div', {}, 'Watched: ', label),
+      el('input', { type: 'range', min: 0, max: 100, value: S.percent, 'aria-label': 'Percent watched',
+        oninput: (e) => { S.percent = Number(e.target.value); $('pctLabel').textContent = `${S.percent}%`; } }),
+      el('button', { style: 'margin-top:6px', disabled: !!S.busy.progress, onclick: () => run('progress', async () => {
+        S.progress = await api('POST', `/videos/${video.id}/progress`, { learner_id: S.learnerId, percent_watched: S.percent });
+        await loadMine();
+        if (S.progress.assessment_id) {
+          if (S.progress.job_id) S.assessJob = { id: S.progress.job_id };
+          await setAssessment(await api('GET', `/assessments/${S.progress.assessment_id}`));
+        }
+      }) }, spinner('progress', 'Send watch progress')),
+      S.progress ? el('div', { class: 'card small' },
+        `Saved: ${S.progress.percent_watched}% watched (threshold ${S.progress.threshold}%). `,
+        S.progress.assessment_id ? '' : 'Below the threshold, so no assessment yet.') : null);
+  }
+
+  if (a.status === 'generating' || a.status === 'submitted') {
+    const failed = S.assessJob && S.assessJob.status === 'failed';
+    return el('div', {},
+      el('div', { class: 'meta' }, pill(a.status)),
+      failed
+        ? [el('div', { class: 'card' }, el('strong', {}, 'The job failed: '), S.assessJob.error),
+           el('button', { style: 'margin-top:10px', disabled: !!S.busy.retryA, onclick: () => run('retryA', async () => {
+             S.assessJob = await api('POST', `/jobs/${S.assessJob.id}/retry`);
+           }) }, 'Retry')]
+        : el('div', { class: 'muted' }, el('span', { class: 'spin' }),
+            a.status === 'generating' ? 'Writing questions from the video content…' : 'Evaluating the answers and writing the report…',
+            el('span', { id: 'stage' }, S.assessJob && S.assessJob.stage ? ` (stage: ${S.assessJob.stage})` : ''),
+            S.assessJob && S.assessJob.error ? el('div', { class: 'small' }, S.assessJob.error) : null));
+  }
+  if (a.status === 'failed') {
+    return el('div', {}, el('div', { class: 'card' }, el('strong', {}, 'Assessment generation failed: '), a.error || 'unknown error'),
+      el('div', { class: 'actions' }, retakeButton('Try again')));
+  }
+  if (a.status === 'evaluated') return viewResult();
+
+  // status === 'ready': the learner answers the questions
+  return el('div', {},
+    el('h2', {}, `Assessment #${a.id} · ${a.questions.length} questions`),
+    a.questions.map((q, i) => el('div', { class: 'card' },
+      el('div', { class: 'meta small' }, el('span', { class: 'pill' }, q.type.replace('_', ' ')),
+        el('span', { class: 'pill' }, `skill: ${q.bloom_level}`), el('span', { class: 'pill' }, q.topic)),
+      el('div', { style: 'font-weight:600;margin-bottom:6px' }, `${i + 1}. ${q.prompt}`),
+      q.options.length
+        ? q.options.map((option, index) => el('label', { class: 'option' },
+            el('input', { type: 'radio', name: `q${q.id}`, checked: (S.answers[q.id] || {}).selected_option === index,
+              onchange: () => { S.answers[q.id] = { selected_option: index }; } }),
+            el('span', {}, option)))
+        : el('textarea', { 'aria-label': `Answer to question ${i + 1}`, placeholder: 'Write your answer in your own words',
+            value: (S.answers[q.id] || {}).text || '',
+            oninput: (e) => { S.answers[q.id] = { text: e.target.value }; } }))),
+    el('div', { class: 'actions' }, el('button', { disabled: !!S.busy.submit, onclick: () => run('submit', async () => {
+      const answers = Object.entries(S.answers).map(([id, value]) => ({ question_id: Number(id), ...value }));
+      const accepted = await api('POST', `/assessments/${a.id}/submit`, { answers });
+      S.assessJob = accepted.job;
+      await setAssessment(await api('GET', `/assessments/${a.id}`));
+    }) }, spinner('submit', 'Submit answers')),
+      retakeButton('Get different questions'),
+      el('span', { class: 'small muted' }, 'Unanswered questions score zero.')));
+}
+
+// Start the quiz again: the server writes a fresh set of questions for the same video.
+function retakeButton(label) {
+  const a = S.assessment;
+  return el('button', { class: 'ghost', disabled: !!S.busy.retake, onclick: () => run('retake', async () => {
+    const accepted = await api('POST', `/assessments/${a.id}/retake`);
+    S.assessJob = accepted.job; S.answers = {}; S.result = null; S.report = null; S.tab = 'assess';
+    await setAssessment(await api('GET', `/assessments/${a.id}`));
+  }) }, spinner('retake', label));
+}
+
+function viewResult() {
+  const r = S.result;
+  if (!r) return el('div', { class: 'muted' }, 'No result loaded.');
+  return el('div', {},
+    el('h2', {}, 'Answer evaluation'),
+    el('div', { class: 'score-line' }, el('span', { class: 'score' }, `${r.percentage}%`),
+      el('span', { class: 'muted' }, `${r.score} of ${r.max_score} points`)),
+    r.results.map((q, i) => el('div', { class: 'card' },
+      el('div', { class: 'meta small' }, pill(q.correctness), el('span', { class: 'pill' }, `${q.score} / ${q.max_score}`),
+        el('span', { class: 'pill' }, q.topic)),
+      el('div', { style: 'font-weight:600' }, `${i + 1}. ${q.prompt}`),
+      el('div', { class: 'small', style: 'margin-top:6px' }, el('span', { class: 'muted' }, 'Your answer: '),
+        q.options.length ? (q.learner_selected_option == null ? '(none)' : q.options[q.learner_selected_option])
+                         : (q.learner_text || '(none)')),
+      el('div', { class: 'small' }, el('span', { class: 'muted' }, q.options.length ? 'Correct answer: ' : 'Model answer: '),
+        q.options.length ? q.options[q.correct_option] : q.reference_answer),
+      el('div', { style: 'margin-top:6px' }, el('span', { class: 'muted small' }, 'Feedback: '), q.feedback),
+      q.improvement_areas.length ? el('div', { class: 'small' }, el('span', { class: 'muted' }, 'Areas to improve: '),
+        q.improvement_areas.join(' · ')) : null)),
+    el('div', { class: 'actions' }, retakeButton('Retake with new questions')));
+}
+
+function bars(rows, key) {
+  return el('div', { class: 'bars' }, rows.map((row) => [
+    el('div', { class: 'name' }, String(row[key]).replace(/_/g, ' ')),
+    el('div', { class: 'bar', role: 'img', 'aria-label': `${row.percentage} percent` },
+      el('div', { style: `width:${row.percentage}%` })),
+    el('div', { class: 'value' }, `${row.percentage}%`, pill(row.level))]));
+}
+const list = (items) => (items.length ? el('ul', {}, items.map((i) => el('li', {}, i))) : el('p', { class: 'muted' }, 'None.'));
+
+// Which answers were right and wrong. For anything not fully right, show the right answer.
+function reviewList() {
+  const r = S.result;
+  if (!r) return null;
+  const mark = { correct: '\u2713', partially_correct: '~', incorrect: '\u2717' };
+  return [el('h2', { class: 'section' }, 'Your answers'),
+    r.results.map((q, i) => {
+      const objective = q.options.length > 0;
+      const yours = objective
+        ? (q.learner_selected_option == null ? 'No answer' : q.options[q.learner_selected_option])
+        : (q.learner_text || 'No answer');
+      const right = objective ? q.options[q.correct_option] : q.reference_answer;
+      return el('div', { class: 'card' },
+        el('div', { class: 'meta small' },
+          el('span', { class: `pill ${q.correctness === 'correct' ? 'good' : q.correctness === 'incorrect' ? 'bad' : 'warn'}` },
+            `${mark[q.correctness] || ''} ${q.correctness.replace(/_/g, ' ')}`),
+          el('span', { class: 'pill' }, `${q.score} / ${q.max_score} point${q.max_score === 1 ? '' : 's'}`),
+          el('span', { class: 'pill' }, q.topic)),
+        el('div', { style: 'font-weight:600' }, `${i + 1}. ${q.prompt}`),
+        el('div', { class: 'small', style: 'margin-top:6px' }, el('span', { class: 'muted' }, 'Your answer: '), yours),
+        q.correctness === 'correct' ? null
+          : el('div', { class: 'small', style: 'margin-top:4px' },
+              el('strong', {}, objective ? 'Right answer: ' : 'A right answer would be: '), right));
+    })];
+}
+
+function viewReport() {
+  const p = S.report;
+  if (!p) return el('div', { class: 'muted' }, 'The report appears here after an assessment has been submitted and evaluated.');
+  const o = p.overall_performance;
+  return el('div', {},
+    el('h2', {}, 'Learning report'),
+    el('div', { class: 'score-line' }, el('span', { class: 'score' }, `${o.percentage}%`), pill(o.level)),
+    el('div', { class: 'muted small' }, `${o.score} of ${o.max_score} points · ${o.correct} correct · ${o.partially_correct} partly correct · ${o.incorrect} incorrect`),
+    el('h2', { class: 'section' }, 'Summary'), el('p', {}, p.ai_summary),
+    el('div', { class: 'cols' },
+      el('div', {}, el('h2', {}, 'Topic-wise analysis'), bars(p.topic_analysis, 'topic')),
+      el('div', {}, el('h2', {}, 'By thinking skill'), bars(p.skill_analysis, 'bloom_level'))),
+    el('div', { class: 'cols section' },
+      el('div', {}, el('h2', {}, 'Strengths'), list(p.strengths)),
+      el('div', {}, el('h2', {}, 'Weaknesses'), list(p.weaknesses))),
+    el('h2', {}, 'What to do next'), list(p.improvement_suggestions),
+    p.recommended_rewatch.length ? [el('h2', {}, 'Recommended rewatch'),
+      el('ul', {}, p.recommended_rewatch.map((s) => el('li', {}, `${s.topic}: ${s.from} – ${s.to} `,
+        s.url ? el('a', { href: s.url, target: '_blank', rel: 'noopener' }, 'open at this point') : null)))] : null,
+    reviewList());
+}
+
+function render() { renderSide(); renderMain(); }
+
+// Header status: one green chip when everything works, a red chip per part that is down.
+// The details (each part, and the model) are in the chip's tooltip and at /health.
+function showHealth(health) {
+  const down = Object.entries(health.checks).filter(([, state]) => state !== 'ok');
+  const details = Object.entries(health.checks).map(([name, state]) => `${name}: ${state}`)
+    .concat(`model: ${health.llm_model}`).join(' | ');
+  $('health').replaceChildren(...(down.length
+    ? down.map(([name]) => el('span', { class: 'pill bad', title: details, tabindex: 0 }, `${name}: down`))
+    : [el('span', { class: 'pill good', title: details, tabindex: 0 }, 'All systems ok')]));
+}
+async function refreshHealth() {
+  try { showHealth(await fetch('/health').then((r) => r.json())); }
+  catch { $('health').replaceChildren(el('span', { class: 'pill bad' }, 'Cannot reach the server')); }
+}
+
+// ---------- background refresh ----------
+let ticks = 0;
+async function tick() {
+  try {
+    const working = S.videos.filter((v) => ['pending', 'processing'].includes(v.status));
+    if (working.length) {
+      const before = JSON.stringify(S.videos.map((v) => [v.id, v.status]));
+      for (const v of working) {
+        if (S.videoJobs[v.id]) S.videoJobs[v.id] = await api('GET', `/jobs/${S.videoJobs[v.id].id}`);
+      }
+      await loadVideos();
+      const changed = JSON.stringify(S.videos.map((v) => [v.id, v.status])) !== before;
+      const watching = working.some((v) => v.id === S.videoId);
+      renderVideoList();
+      if (changed || watching) renderMain();
+    }
+    const a = S.assessment;
+    if (a && ['generating', 'submitted'].includes(a.status)) {
+      const wasFailed = S.assessJob && S.assessJob.status === 'failed';
+      if (S.assessJob) S.assessJob = await api('GET', `/jobs/${S.assessJob.id}`);
+      const fresh = await api('GET', `/assessments/${a.id}`);
+      if (S.assessment !== a) {
+        // The learner or the video was switched while this was loading: leave the new screen alone.
+      } else if (fresh.status !== a.status) {
+        await setAssessment(fresh);
+        renderVideoList();
+        if (fresh.status === 'evaluated') S.tab = 'report';
+        renderMain();
+      } else if (S.assessJob && (S.assessJob.status === 'failed') !== wasFailed) {
+        renderMain();
+      } else if ($('stage') && S.assessJob && S.assessJob.stage) {
+        $('stage').textContent = ` (stage: ${S.assessJob.stage})`;
+      }
+    }
+  } catch { /* the next tick tries again */ }
+  if (++ticks % 12 === 0) refreshHealth();
+  setTimeout(tick, 2500);
+}
+
+async function init() {
+  try {
+    const [health, spec] = await Promise.all([
+      fetch('/health').then((r) => r.json()), api('GET', '/openapi.json'),
+    ]);
+    $('title').textContent = spec.info.title;
+    document.title = `${spec.info.title} · Test Console`;
+    showHealth(health);
+    const [learners] = await Promise.all([api('GET', '/learners'), loadVideos()]);
+    // Progress and quizzes are kept per learner. One is created the first time the page is opened.
+    S.learners = learners.length ? learners : [await api('POST', '/learners', { name: 'Learner' })];
+    // /ui?learner=1&video=2&tab=report opens a specific screen.
+    const link = new URLSearchParams(location.search);
+    const learnerId = Number(link.get('learner') || store.get('learnerId'));
+    S.learnerId = (S.learners.find((l) => l.id === learnerId) || S.learners[0]).id;
+    const videoId = Number(link.get('video') || store.get('videoId'));
+    if (['overview', 'transcript', 'explore', 'assess', 'report'].includes(link.get('tab'))) S.tab = link.get('tab');
+    if (S.videos.some((v) => v.id === videoId)) S.videoId = videoId;
+    await loadAssessment();
+  } catch (error) { toast(`Could not load: ${error.message}`); }
+  render();
+  if (S.tab === 'transcript' && currentVideo()) openTranscript(currentVideo());
+  tick();
+}
+init();
+</script>
+</body>
+</html>

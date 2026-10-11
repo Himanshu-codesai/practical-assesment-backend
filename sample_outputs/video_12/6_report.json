@@ -1,0 +1,174 @@
+{
+  "assessment_id": 7,
+  "learner": {
+    "id": 2,
+    "name": "Demo Learner"
+  },
+  "video": {
+    "id": 12,
+    "title": "Photosynthesis in two minutes (sample audio lecture)"
+  },
+  "generated_at": "2026-10-11T11:09:01+00:00",
+  "overall_performance": {
+    "score": 0.0,
+    "max_score": 4.0,
+    "percentage": 0.0,
+    "level": "needs_work",
+    "questions": 4,
+    "correct": 0,
+    "partially_correct": 0,
+    "incorrect": 4
+  },
+  "topic_analysis": [
+    {
+      "topic": "Chloroplasts and photosynthesis stages",
+      "questions": 3,
+      "score": 0.0,
+      "max_score": 3.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    },
+    {
+      "topic": "Limiting factors of photosynthesis",
+      "questions": 1,
+      "score": 0.0,
+      "max_score": 1.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    }
+  ],
+  "skill_analysis": [
+    {
+      "bloom_level": "understand",
+      "questions": 2,
+      "score": 0.0,
+      "max_score": 2.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    },
+    {
+      "bloom_level": "analyze",
+      "questions": 1,
+      "score": 0.0,
+      "max_score": 1.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    },
+    {
+      "bloom_level": "apply",
+      "questions": 1,
+      "score": 0.0,
+      "max_score": 1.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    }
+  ],
+  "strengths": [],
+  "weaknesses": [
+    "How the light stage and Calvin cycle depend on each other",
+    "Why leaves look green: chlorophyll reflects green light",
+    "How a low supply of carbon dioxide limits photosynthesis"
+  ],
+  "improvement_suggestions": [
+    "Rewatch 00:00 to 01:21 on how ATP and NADPH drive the Calvin cycle.",
+    "Explain in one sentence why the Calvin cycle stops soon after light stops.",
+    "Rewatch 01:06 to 01:58 on limiting factors like carbon dioxide."
+  ],
+  "ai_summary": "None of the main ideas from the video came through yet. Start with how the light stage feeds ATP and NADPH to the Calvin cycle.",
+  "recommended_rewatch": [
+    {
+      "topic": "Chloroplasts and photosynthesis stages",
+      "from": "00:00",
+      "to": "01:21"
+    },
+    {
+      "topic": "Limiting factors of photosynthesis",
+      "from": "01:06",
+      "to": "01:58"
+    }
+  ],
+  "question_breakdown": [
+    {
+      "question_id": 37,
+      "type": "mcq",
+      "topic": "Chloroplasts and photosynthesis stages",
+      "bloom_level": "understand",
+      "prompt": "Why do most leaves look green?",
+      "learner_answer": "Chlorophyll absorbs green light and stores its energy",
+      "correct_answer": "Chlorophyll reflects green light and absorbs red and blue",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"Chlorophyll reflects green light and absorbs red and blue\". We see the light a leaf reflects. Chlorophyll absorbs red and blue light and reflects green, so green reaches our eyes.",
+      "improvement_areas": [
+        "Chloroplasts and photosynthesis stages"
+      ],
+      "video_segment": {
+        "topic": "Chloroplasts and photosynthesis stages",
+        "from": "00:00",
+        "to": "01:21"
+      }
+    },
+    {
+      "question_id": 38,
+      "type": "true_false",
+      "topic": "Chloroplasts and photosynthesis stages",
+      "bloom_level": "understand",
+      "prompt": "Since the Calvin cycle does not need light directly, it can keep making glucose for a long time after light stops.",
+      "learner_answer": "True",
+      "correct_answer": "False",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"False\". The Calvin cycle runs on ATP and NADPH from the light-dependent reactions. Without light, that supply runs out and sugar building stops.",
+      "improvement_areas": [
+        "Chloroplasts and photosynthesis stages"
+      ],
+      "video_segment": {
+        "topic": "Chloroplasts and photosynthesis stages",
+        "from": "00:00",
+        "to": "01:21"
+      }
+    },
+    {
+      "question_id": 39,
+      "type": "short_answer",
+      "topic": "Chloroplasts and photosynthesis stages",
+      "bloom_level": "analyze",
+      "prompt": "How do the two stages of photosynthesis depend on each other?",
+      "learner_answer": "I think it is about how the parts connect together, but I am not sure of the details.",
+      "correct_answer": "The light-dependent reactions capture light energy in ATP and NADPH. The Calvin cycle uses that ATP and NADPH to turn carbon dioxide into glucose.",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "The answer does not cover any of the key ideas. The first stage stores light energy in ATP and NADPH, and the Calvin cycle uses them to turn carbon dioxide into glucose.",
+      "improvement_areas": [
+        "ATP and NADPH from light reactions",
+        "Calvin cycle making glucose"
+      ],
+      "video_segment": {
+        "topic": "Chloroplasts and photosynthesis stages",
+        "from": "00:00",
+        "to": "01:21"
+      }
+    },
+    {
+      "question_id": 40,
+      "type": "scenario",
+      "topic": "Limiting factors of photosynthesis",
+      "bloom_level": "apply",
+      "prompt": "A greenhouse is bright and warm, but carbon dioxide levels are very low. The grower adds more lamps. Will photosynthesis speed up, and why?",
+      "learner_answer": "I think it is about how the parts connect together, but I am not sure of the details.",
+      "correct_answer": "No, it will not speed up much. Carbon dioxide is the limiting factor, so adding light does not help until more carbon dioxide is supplied.",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "The answer does not address the greenhouse case. More lamps will not help because carbon dioxide is the limiting factor, so only adding carbon dioxide would speed photosynthesis up.",
+      "improvement_areas": [
+        "Limiting factors of photosynthesis",
+        "Carbon dioxide as a limiting factor"
+      ],
+      "video_segment": {
+        "topic": "Limiting factors of photosynthesis",
+        "from": "01:06",
+        "to": "01:58"
+      }
+    }
+  ]
+}

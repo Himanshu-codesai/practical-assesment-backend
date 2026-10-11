@@ -1,0 +1,39 @@
+{
+  "query": "Neurons, layers and activations",
+  "mode": "hybrid",
+  "results": [
+    {
+      "chunk_id": 71,
+      "video_id": 9,
+      "chunk_index": 4,
+      "topic": "Neurons, layers and activations",
+      "start": "03:52",
+      "end": "04:48",
+      "url": "https://www.youtube.com/watch?v=aircAruvnKk&t=232s",
+      "score": 1.0,
+      "text": "The activation in these neurons, again some number that's between 0 and 1, represents how much the system thinks that a given image corresponds with a given digit. There's also a couple layers in between called the hidden layers, which for the time being should just be a giant question mark for how on earth this process of recognizing digits is going to be handled. In this network I chose two hidden layers, each one with 16 neurons, and admittedly that's kind of an arbitrary choice. To be honest I chose two layers based on how I want to motivate the structure in just a moment, and 16, well that was just a nice number to fit on the screen. In practice there is a lot of room for experiment with a specific structure here. The way the network operates, activations in one layer determine the activations of the next layer. And of course the heart of the network as an information processing mechanism comes down to exactly how those activations from one layer bring about activations in the next layer."
+    },
+    {
+      "chunk_id": 70,
+      "video_id": 9,
+      "chunk_index": 3,
+      "topic": "Neurons, layers and activations",
+      "start": "02:43",
+      "end": "04:02",
+      "url": "https://www.youtube.com/watch?v=aircAruvnKk&t=163s",
+      "score": 0.5833,
+      "text": "As the name suggests neural networks are inspired by the brain, but let's break that down. What are the neurons, and in what sense are they linked together? Right now when I say neuron all I want you to think about is a thing that holds a number, specifically a number between 0 and 1. It's really not more than that. For example the network starts with a bunch of neurons corresponding to each of the 28x28 pixels of the input image, which is 784 neurons in total. Each one of these holds a number that represents the grayscale value of the corresponding pixel, ranging from 0 for black pixels up to 1 for white pixels. This number inside the neuron is called its activation, and the image you might have in mind here is that each neuron is lit up when its activation is a high number. So all of these 784 neurons make up the first layer of our network. Now jumping over to the last layer, this has 10 neurons, each representing one of the digits. The activation in these neurons, again some number that's between 0 and 1, represents how much the system thinks that a given image corresponds with a given digit."
+    },
+    {
+      "chunk_id": 72,
+      "video_id": 9,
+      "chunk_index": 5,
+      "topic": "Neurons, layers and activations",
+      "start": "04:43",
+      "end": "05:45",
+      "url": "https://www.youtube.com/watch?v=aircAruvnKk&t=283s",
+      "score": 0.5333,
+      "text": "to exactly how those activations from one layer bring about activations in the next layer. It's meant to be loosely analogous to how in biological networks of neurons, some groups of neurons firing cause certain others to fire. Now the network I'm showing here has already been trained to recognize digits, and let me show you what I mean by that. It means if you feed in an image, lighting up all 784 neurons of the input layer according to the brightness of each pixel in the image, that pattern of activations causes some very specific pattern in the next layer which causes some pattern in the one after it, which finally gives some pattern in the output layer. And the brightest neuron of that output layer is the network's choice, so to speak, for what digit this image represents. And before jumping into the math for how one layer influences the next, or how training works, let's just talk about why it's even reasonable to expect a layered structure like this to behave intelligently. What are we expecting here?"
+    }
+  ]
+}

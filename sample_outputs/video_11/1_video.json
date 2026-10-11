@@ -1,0 +1,35 @@
+{
+  "id": 11,
+  "title": "Vectors, Essence of linear algebra chapter 1 (3Blue1Brown)",
+  "source_type": "youtube",
+  "source_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs",
+  "status": "ready",
+  "error": null,
+  "duration_seconds": 591.8,
+  "transcript_method": "auto",
+  "transcript_source": "captions",
+  "summary": "This video introduces the vector as the fundamental building block of linear algebra, contrasting the physics view (arrows in space), the computer science view (ordered lists of numbers), and the mathematician's abstract view. It then sets up coordinate systems in two and three dimensions, showing how each vector rooted at the origin corresponds to exactly one list of coordinates. The two fundamental operations, vector addition and scalar multiplication, are defined both geometrically and numerically. The video closes by arguing that the real power of linear algebra lies in translating back and forth between the geometric and numeric perspectives.",
+  "topics": [
+    {
+      "name": "Three perspectives on vectors",
+      "summary": "Vectors can be seen as arrows with length and direction (physics), ordered lists of numbers (computer science), or anything supporting addition and scaling (mathematics)."
+    },
+    {
+      "name": "Vector coordinates in 2D and 3D",
+      "summary": "Vectors are pictured as arrows rooted at the origin of a coordinate system, with their coordinates giving instructions to reach the tip, giving a one-to-one correspondence between vectors and pairs or triplets of numbers."
+    },
+    {
+      "name": "Vector addition",
+      "summary": "Vectors are added by placing them tip to tail, interpreted as combining movements, which numerically means adding corresponding components."
+    },
+    {
+      "name": "Scalar multiplication",
+      "summary": "Multiplying a vector by a number stretches, squishes, or reverses it, such numbers are called scalars, and numerically each component is multiplied by the scalar."
+    },
+    {
+      "name": "Translating between geometry and numbers",
+      "summary": "The usefulness of linear algebra comes from moving between the arrow and list-of-numbers views, helping data analysts visualize data and letting physicists and graphics programmers compute with space."
+    }
+  ],
+  "created_at": "2026-10-11T11:03:11.310871Z"
+}

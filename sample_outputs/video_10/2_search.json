@@ -1,0 +1,39 @@
+{
+  "query": "Circle area via concentric rings",
+  "mode": "hybrid",
+  "results": [
+    {
+      "chunk_id": 91,
+      "video_id": 10,
+      "chunk_index": 2,
+      "topic": "Circle area via concentric rings",
+      "start": "02:13",
+      "end": "03:15",
+      "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM&t=133s",
+      "score": 1.0,
+      "text": "many of which might lead to their own interesting observations, maybe you try out the idea of slicing up the circle into many concentric rings. This should seem promising because it respects the symmetry of the circle, and math has a tendency to reward you when you respect its symmetries. Let's take one of those rings, which has some inner radius r that's between 0 and 3. If we can find a nice expression for the area of each ring like this one, and if we have a nice way to add them all up, it might lead us to an understanding of the full circle's area. Maybe you start by imagining straightening out this ring. And you could try thinking through exactly what this new shape is and what its area should be, but for simplicity, let's just approximate it as a rectangle. The width of that rectangle is the circumference of the original ring, which is 2 pi times r, right? I mean, that's essentially the definition of pi. And its thickness? Well, that depends on how finely you chopped up the circle in the first place, which was kind of arbitrary."
+    },
+    {
+      "chunk_id": 90,
+      "video_id": 10,
+      "chunk_index": 1,
+      "topic": "Circle area via concentric rings",
+      "start": "01:06",
+      "end": "02:21",
+      "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM&t=66s",
+      "score": 0.5833,
+      "text": "Inventing math is no joke, and there is a difference between being told why something's true, and actually generating it from scratch. But at all points, I want you to think to yourself, if you were an early mathematician, pondering these ideas and drawing out the right diagrams, does it feel reasonable that you could have stumbled across these truths yourself? In this initial video, I want to show how you might stumble into the core ideas of calculus by thinking very deeply about one specific bit of geometry, the area of a circle. Maybe you know that this is pi times its radius squared, but why? Is there a nice way to think about where this formula comes from? Well, contemplating this problem and leaving yourself open to exploring the interesting thoughts that come about can actually lead you to a glimpse of three big ideas in calculus, integrals, derivatives, and the fact that they're opposites. But the story starts more simply, just you and a circle, let's say with radius 3. You're trying to figure out its area, and after going through a lot of paper trying different ways to chop up and rearrange the pieces of that area, many of which might lead to their own interesting observations, maybe you try out the idea of slicing up the circle into many concentric rings."
+    },
+    {
+      "chunk_id": 92,
+      "video_id": 10,
+      "chunk_index": 3,
+      "topic": "Circle area via concentric rings",
+      "start": "03:10",
+      "end": "04:22",
+      "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM&t=190s",
+      "score": 0.5833,
+      "text": "Well, that depends on how finely you chopped up the circle in the first place, which was kind of arbitrary. In the spirit of using what will come to be standard calculus notation, let's call that thickness dr for a tiny difference in the radius from one ring to the next. Maybe you think of it as something like 0.1. So approximating this unwrapped ring as a thin rectangle, its area is 2 pi times r, the radius, times dr, the little thickness. And even though that's not perfect, for smaller and smaller choices of dr, this is actually going to be a better and better approximation for that area, since the top and the bottom sides of this shape are going to get closer and closer to being exactly the same length. So let's just move forward with this approximation, keeping in the back of our minds that it's slightly wrong, but it's going to become more accurate for smaller and smaller choices of dr. That is, if we slice up the circle into thinner and thinner rings. So just to sum up where we are, you've broken up the area of the circle into all of these rings, and you're approximating the area of each one of those as 2 pi times its radius times dr, where the specific value for that inner radius"
+    }
+  ]
+}

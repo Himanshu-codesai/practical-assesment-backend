@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:03,520
+Welcome to this short lesson on photosynthesis.
+
+2
+00:00:03,520 --> 00:00:09,920
+Photosynthesis is the process plants use to turn light energy into chemical energy stored in sugar.
+
+3
+00:00:09,920 --> 00:00:16,800
+It takes place inside the chloroplasts, which are small structures found mostly in the cells of leaves.
+
+4
+00:00:16,800 --> 00:00:20,800
+Chloroplasts contain a green pigment called chlorophyll.
+
+5
+00:00:20,800 --> 00:00:26,800
+Chlorophyll absorbs red and blue light and reflects green light, which is why leaves look green.
+
+6
+00:00:26,800 --> 00:00:29,920
+Photosynthesis happens in two stages.
+
+7
+00:00:29,920 --> 00:00:33,680
+The first stage is called the light-dependent reactions.
+
+8
+00:00:33,680 --> 00:00:37,120
+These take place in the thylacoid membranes.
+
+9
+00:00:37,120 --> 00:00:41,440
+Here, light energy is used to split water molecules.
+
+10
+00:00:41,440 --> 00:00:47,360
+Splitting water releases oxygen as a byproduct, and that is the oxygen we breathe.
+
+11
+00:00:47,360 --> 00:00:54,800
+The energy captured in the stages stored in two carrier molecules, called ATP and NADPH.
+
+12
+00:00:54,800 --> 00:00:58,160
+The second stage is called the Calvin cycle.
+
+13
+00:00:58,160 --> 00:01:03,120
+It takes place in the stroma, the fluid that surrounds the thylacoids.
+
+14
+00:01:03,120 --> 00:01:06,480
+The Calvin cycle does not need light directly.
+
+15
+00:01:06,480 --> 00:01:15,200
+Instead, it uses the ATP and NADPH made in the first stage to convert carbon dioxide from the air into glucose.
+
+16
+00:01:15,200 --> 00:01:21,440
+So the first stage captures energy, and the second stage uses that energy to build sugar.
+
+17
+00:01:21,440 --> 00:01:28,240
+Three things can limit the rate of photosynthesis, light intensity, carbon dioxide concentration,
+
+18
+00:01:28,240 --> 00:01:29,840
+and temperature.
+
+19
+00:01:29,840 --> 00:01:34,320
+If any one of them is in short supply, it becomes the limiting factor,
+
+20
+00:01:34,320 --> 00:01:38,640
+and increasing the others will not make photosynthesis go faster.
+
+21
+00:01:38,640 --> 00:01:44,080
+For example, on a bright but very cold day, temperature is the limiting factor,
+
+22
+00:01:44,080 --> 00:01:48,320
+because the enzymes of the Calvin cycle work slowly in the cold.
+
+23
+00:01:48,320 --> 00:01:54,800
+To summarize, plants take in water and carbon dioxide, use light energy to make glucose,
+
+24
+00:01:54,800 --> 00:01:56,960
+and release oxygen.
+
+25
+00:01:56,960 --> 00:01:58,960
+Thank you for watching.

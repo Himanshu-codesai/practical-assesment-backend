@@ -1,0 +1,100 @@
+{
+  "id": 5,
+  "learner_id": 2,
+  "video_id": 10,
+  "status": "ready",
+  "error": null,
+  "created_at": "2026-10-11T11:06:36.820771Z",
+  "questions": [
+    {
+      "id": 21,
+      "position": 0,
+      "type": "mcq",
+      "bloom_level": "understand",
+      "topic": "Circle area via concentric rings",
+      "prompt": "Why does the rectangle estimate 2πr·dr for a ring get better as dr gets smaller?",
+      "options": [
+        "Fewer rings are used, so less error adds up",
+        "The ring's inner and outer edges become nearly equal in length",
+        "The value of pi becomes more exact for thin rings",
+        "Each ring's radius gets closer to the full circle's radius"
+      ]
+    },
+    {
+      "id": 22,
+      "position": 1,
+      "type": "true_false",
+      "bloom_level": "understand",
+      "topic": "Derivatives as rates of change",
+      "prompt": "True or false: the derivative of A is the ratio dA/dx for any fixed small nudge, such as dx = 0.1.",
+      "options": [
+        "True",
+        "False"
+      ]
+    },
+    {
+      "id": 23,
+      "position": 2,
+      "type": "short_answer",
+      "bloom_level": "analyze",
+      "topic": "Sums as area under a graph",
+      "prompt": "In the sum of many terms 2πr·dr, what two jobs does dr do?",
+      "options": []
+    },
+    {
+      "id": 24,
+      "position": 3,
+      "type": "scenario",
+      "bloom_level": "apply",
+      "topic": "Sums as area under a graph",
+      "prompt": "A friend uses the ring method on a circle of radius 5. What shape sits under the graph of 2πr from 0 to 5, and what area does it give?",
+      "options": []
+    },
+    {
+      "id": 25,
+      "position": 4,
+      "type": "mcq",
+      "bloom_level": "understand",
+      "topic": "Integrals as area functions",
+      "prompt": "What changes when the area under x² from 0 to 3 becomes an area function A(x)?",
+      "options": [
+        "The left endpoint moves while the right stays at 3",
+        "The curve x² is swapped for a straight line",
+        "The right endpoint becomes a variable input x",
+        "The area is estimated with one large rectangle"
+      ]
+    },
+    {
+      "id": 26,
+      "position": 5,
+      "type": "scenario",
+      "bloom_level": "apply",
+      "topic": "Integrals as area functions",
+      "prompt": "Water flows into a tank at a rate that changes over time. Why can the total water added be found as the area under the rate graph?",
+      "options": []
+    },
+    {
+      "id": 27,
+      "position": 6,
+      "type": "mcq",
+      "bloom_level": "apply",
+      "topic": "Derivatives as rates of change",
+      "prompt": "A(x) is the area under x². At x = 3, you nudge x by dx = 0.01. About how much does the area grow?",
+      "options": [
+        "About 0.03",
+        "About 0.06",
+        "About 0.0009",
+        "About 0.09"
+      ]
+    },
+    {
+      "id": 28,
+      "position": 7,
+      "type": "short_answer",
+      "bloom_level": "analyze",
+      "topic": "Fundamental theorem of calculus",
+      "prompt": "Why does the derivative of an area-under-a-graph function give back the graph's own function?",
+      "options": []
+    }
+  ]
+}

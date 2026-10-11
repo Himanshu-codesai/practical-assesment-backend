@@ -1,0 +1,89 @@
+{
+  "assessment_id": 3,
+  "status": "evaluated",
+  "score": 1.0,
+  "max_score": 4.0,
+  "percentage": 25.0,
+  "results": [
+    {
+      "question_id": 9,
+      "type": "mcq",
+      "topic": "How photosynthesis works",
+      "prompt": "Why does the name photosynthesis fit what plants do?",
+      "options": [
+        "Plants use light to put things together into food",
+        "Plants break food apart to release light",
+        "Plants put light together with oxygen to breathe",
+        "Plants store light inside their roots for later"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 0,
+      "reference_answer": null,
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Photo means light and synthesis means putting together. Plants use light to combine carbon dioxide and water into sugar.",
+      "improvement_areas": []
+    },
+    {
+      "question_id": 10,
+      "type": "scenario",
+      "topic": "How photosynthesis works",
+      "prompt": "A plant gets plenty of sunlight and air, but nobody waters it for weeks. Which part of making food is it missing, and how would it normally get it?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "I think it is about how the parts connect together, but I am not sure of the details.",
+      "correct_option": null,
+      "reference_answer": "It is missing water, which it needs along with carbon dioxide and sunlight to make sugar. It normally absorbs water through its roots.",
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "The missing part is water. A plant soaks up water through its roots and uses it with sunlight and carbon dioxide to make sugar, its food.",
+      "improvement_areas": [
+        "Water as an ingredient for food",
+        "Roots absorbing water"
+      ]
+    },
+    {
+      "question_id": 11,
+      "type": "true_false",
+      "topic": "Chlorophyll and oxygen for life",
+      "prompt": "Plants look green because the sugar they make is green.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 1,
+      "reference_answer": null,
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"False\". The green color comes from chlorophyll, a green pigment in the chloroplasts. The sugar is the plant's food and does not make it green.",
+      "improvement_areas": [
+        "Chlorophyll and oxygen for life"
+      ]
+    },
+    {
+      "question_id": 12,
+      "type": "short_answer",
+      "topic": "Chlorophyll and oxygen for life",
+      "prompt": "Plants are called the lungs of the world. How does what plants take in and give out connect them to the air humans breathe?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "I think it is about how the parts connect together, but I am not sure of the details.",
+      "correct_option": null,
+      "reference_answer": "Plants take in carbon dioxide and give out oxygen. Humans breathe that oxygen, so plants keep supplying the air we need.",
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "Plants take in carbon dioxide and give out oxygen, and that oxygen is what people breathe. This is why plants are called the lungs of the world.",
+      "improvement_areas": [
+        "Gases plants take in and give out",
+        "Oxygen link to human breathing"
+      ]
+    }
+  ]
+}

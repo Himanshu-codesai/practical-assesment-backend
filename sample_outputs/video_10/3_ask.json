@@ -1,0 +1,63 @@
+{
+  "question": "What is the main idea of this video?",
+  "answerable": true,
+  "answer": "The main idea is that you could have invented calculus yourself. Instead of handing you rules and formulas to memorize, the video shows how its core ideas come out naturally when you think hard about one simple question: why is a circle's area pi times the radius squared? Slicing the circle into thin concentric rings turns the problem into finding the area under a graph, which is the idea behind integrals. Asking how that area changes when you nudge the right endpoint a little leads to derivatives, which measure how sensitive a function is to small changes in its input. Finally, it hints at the fundamental theorem of calculus: integrals and derivatives are inverses of each other. The video is a high-level preview, and the rest of the series fills in the details.",
+  "citations": [
+    {
+      "chunk_id": 104,
+      "video_id": 10,
+      "chunk_index": 15,
+      "topic": "Fundamental theorem of calculus",
+      "start": "15:34",
+      "end": "16:36",
+      "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM&t=934s",
+      "score": 0.8333,
+      "text": "It ties together the two big ideas of integrals and derivatives, and shows how each one is an inverse of the other. All of this is only a high-level view, just a peek at some of the core ideas that emerge in calculus. And what follows in this series are the details, for derivatives and integrals and more. At all points, I want you to feel that you could have invented calculus yourself, that if you drew the right pictures and played with each idea in just the right way, these formulas and rules and constructs that are presented could have just as easily popped out naturally from your own explorations. And before you go, it would feel wrong not to give the people who supported this series on Patreon a well-deserved thanks, both for their financial backing as well as for the suggestions they gave while the series was being developed. You see, supporters got early access to the videos as I made them, and they'll continue to get early access for future essence-of type series. And as a thanks to the community, I keep ads off of new videos for their first month."
+    },
+    {
+      "chunk_id": 90,
+      "video_id": 10,
+      "chunk_index": 1,
+      "topic": "Circle area via concentric rings",
+      "start": "01:06",
+      "end": "02:21",
+      "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM&t=66s",
+      "score": 0.75,
+      "text": "Inventing math is no joke, and there is a difference between being told why something's true, and actually generating it from scratch. But at all points, I want you to think to yourself, if you were an early mathematician, pondering these ideas and drawing out the right diagrams, does it feel reasonable that you could have stumbled across these truths yourself? In this initial video, I want to show how you might stumble into the core ideas of calculus by thinking very deeply about one specific bit of geometry, the area of a circle. Maybe you know that this is pi times its radius squared, but why? Is there a nice way to think about where this formula comes from? Well, contemplating this problem and leaving yourself open to exploring the interesting thoughts that come about can actually lead you to a glimpse of three big ideas in calculus, integrals, derivatives, and the fact that they're opposites. But the story starts more simply, just you and a circle, let's say with radius 3. You're trying to figure out its area, and after going through a lot of paper trying different ways to chop up and rearrange the pieces of that area, many of which might lead to their own interesting observations, maybe you try out the idea of slicing up the circle into many concentric rings."
+    },
+    {
+      "chunk_id": 89,
+      "video_id": 10,
+      "chunk_index": 0,
+      "topic": "Circle area via concentric rings",
+      "start": "00:14",
+      "end": "01:14",
+      "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM&t=14s",
+      "score": 0.4583,
+      "text": "Hey everyone, Grant here. This is the first video in a series on the essence of calculus, and I'll be publishing the following videos once per day for the next 10 days. The goal here, as the name suggests, is to really get the heart of the subject out in one binge-watchable set. But with a topic that's as broad as calculus, there's a lot of things that can mean, so here's what I have in mind specifically. Calculus has a lot of rules and formulas which are often presented as things to be memorized. Lots of derivative formulas, the product rule, the chain rule, implicit differentiation, the fact that integrals and derivatives are opposite, Taylor series, just a lot of things like that. And my goal is for you to come away feeling like you could have invented calculus yourself. That is, cover all those core ideas, but in a way that makes clear where they actually come from, and what they really mean, using an all-around visual approach. Inventing math is no joke, and there is a difference between being told why something's true, and actually generating it from scratch."
+    },
+    {
+      "chunk_id": 102,
+      "video_id": 10,
+      "chunk_index": 13,
+      "topic": "Derivatives as rates of change",
+      "start": "13:30",
+      "end": "14:37",
+      "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM&t=810s",
+      "score": 0.4167,
+      "text": "And this relationship between tiny changes to the mystery function and the values of x2 itself is true at all inputs, not just 3. That doesn't immediately tell us how to find a of x, but it provides a very strong clue that we can work with. And there's nothing special about the graph x2 here. Any function defined as the area under some graph has this property, that da divided by dx, a slight nudge to the output of a divided by a slight nudge to the input that caused it, is about equal to the height of the graph at that point. Again, that's an approximation that gets better and better for smaller choices of dx. And here, we're stumbling into another big idea from calculus, derivatives. This ratio da divided by dx is called the derivative of a, or more technically, the derivative is whatever this ratio approaches as dx gets smaller and smaller. I'll dive much more deeply into the idea of a derivative in the next video, but loosely speaking it's a measure of how sensitive a function is to small changes in its input."
+    },
+    {
+      "chunk_id": 98,
+      "video_id": 10,
+      "chunk_index": 9,
+      "topic": "Integrals as area functions",
+      "start": "09:16",
+      "end": "10:23",
+      "url": "https://www.youtube.com/watch?v=WUvTyaaNkzM&t=556s",
+      "score": 0.325,
+      "text": "the one whose sum approximates the original problem, can be thought of as the areas of many thin rectangles sitting side by side. If finer and finer approximations of the original problem correspond to thinner and thinner rings, then the original problem is equivalent to finding the area under some graph. Again, this is an idea we'll see in more detail later in the series, so don't worry if it's not 100% clear right now. The point now is that you, as the mathematician having just solved a problem by reframing it as the area under a graph, might start thinking about how to find the areas under other graphs. We were lucky in the circle problem that the relevant area turned out to be a triangle, but imagine instead something like a parabola, the graph of x2. What's the area underneath that curve, say between the values of x equals 0 and x equals 3? Well, it's hard to think about, right? And let me reframe that question in a slightly different way. We'll fix that left endpoint in place at 0, and let the right endpoint vary."
+    }
+  ],
+  "cached": false
+}

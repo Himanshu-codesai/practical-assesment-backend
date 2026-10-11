@@ -1,0 +1,23 @@
+{
+  "id": 12,
+  "title": "Photosynthesis in two minutes (sample audio lecture)",
+  "source_type": "upload",
+  "source_url": null,
+  "status": "ready",
+  "error": null,
+  "duration_seconds": 119.0,
+  "transcript_method": "auto",
+  "transcript_source": "whisper",
+  "summary": "This short lesson explains photosynthesis, the process plants use to turn light energy into chemical energy stored in sugar inside chloroplasts. Chlorophyll absorbs red and blue light and reflects green, which is why leaves look green. In the light-dependent reactions in the thylakoid membranes, light splits water, releasing oxygen and storing energy in ATP and NADPH. The Calvin cycle in the stroma then uses that ATP and NADPH to turn carbon dioxide into glucose. The lesson ends with the three limiting factors (light intensity, carbon dioxide concentration and temperature) and a recap of the overall process.",
+  "topics": [
+    {
+      "name": "Chloroplasts and photosynthesis stages",
+      "summary": "Explains where photosynthesis happens, how chlorophyll absorbs light, and how the light-dependent reactions produce oxygen, ATP and NADPH that the Calvin cycle uses to turn carbon dioxide into glucose."
+    },
+    {
+      "name": "Limiting factors of photosynthesis",
+      "summary": "Shows how light intensity, carbon dioxide concentration and temperature can each limit the rate of photosynthesis, using a cold, bright day as an example where temperature slows the Calvin cycle enzymes."
+    }
+  ],
+  "created_at": "2026-10-11T11:03:11.702325Z"
+}

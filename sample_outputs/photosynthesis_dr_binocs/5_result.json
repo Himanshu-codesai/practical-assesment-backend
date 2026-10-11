@@ -1,0 +1,85 @@
+{
+  "assessment_id": 2,
+  "status": "evaluated",
+  "score": 2.5,
+  "max_score": 4.0,
+  "percentage": 62.5,
+  "results": [
+    {
+      "question_id": 5,
+      "type": "mcq",
+      "topic": "Meaning of photosynthesis",
+      "prompt": "The name photosynthesis joins two Greek words. What does the full name tell us the process does?",
+      "options": [
+        "It stores light inside the plant's leaves",
+        "It uses light to put things together",
+        "It breaks food apart to release light",
+        "It puts plants together with other plants"
+      ],
+      "learner_selected_option": 1,
+      "learner_text": null,
+      "correct_option": 1,
+      "reference_answer": null,
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Photo means light and synthesis means putting together, so the plant uses light to build its food from simpler things.",
+      "improvement_areas": []
+    },
+    {
+      "question_id": 6,
+      "type": "scenario",
+      "topic": "How photosynthesis works",
+      "prompt": "A plant's leaves get coated in thick dust that blocks their tiny openings. Which ingredient for making food would the plant have trouble getting, and why?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "It would have trouble getting carbon dioxide, because the dust stops the sunlight from reaching the leaf.",
+      "correct_option": null,
+      "reference_answer": "It would have trouble getting carbon dioxide. The plant takes in carbon dioxide through the stomata in its leaves, and those are now blocked.",
+      "score": 0.5,
+      "max_score": 1.0,
+      "correctness": "partially_correct",
+      "feedback": "You correctly named carbon dioxide. The reason is that carbon dioxide enters through tiny openings in the leaves called stomata, and the dust blocks them, not the sunlight.",
+      "improvement_areas": [
+        "Stomata and how carbon dioxide enters"
+      ]
+    },
+    {
+      "question_id": 7,
+      "type": "true_false",
+      "topic": "How photosynthesis works",
+      "prompt": "Plants make sugar by photosynthesis and then release that sugar into the air, keeping the oxygen for themselves.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 1,
+      "reference_answer": null,
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"False\". It is the other way round. The plant keeps the sugar to use as food and gives the oxygen out into the air.",
+      "improvement_areas": [
+        "How photosynthesis works"
+      ]
+    },
+    {
+      "question_id": 8,
+      "type": "short_answer",
+      "topic": "Chlorophyll and plants' role",
+      "prompt": "Why do people call plants the lungs of the world?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "Because plants take in carbon dioxide and give out oxygen, and people need that oxygen to breathe.",
+      "correct_option": null,
+      "reference_answer": "Plants take in carbon dioxide and give out oxygen. Humans need that oxygen to breathe.",
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "You covered it all: plants take in carbon dioxide, give out oxygen, and people breathe that oxygen.",
+      "improvement_areas": []
+    }
+  ]
+}

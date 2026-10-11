@@ -1,0 +1,52 @@
+{
+  "question": "What is the main idea of this video?",
+  "answerable": true,
+  "answer": "The video aims to show what a neural network actually is, explained as a piece of math rather than a buzzword and assuming no background. It focuses only on the network's structure; how the network learns is left for the next video. The running example is a network that recognizes handwritten digits from 28x28 pixel images. This is a task your brain does effortlessly but is very hard to write a program for. A key idea is why a layered structure might work. The hope is that early layers pick up small edges. Middle layers combine those edges into parts like loops and lines. The final layer combines those parts to decide which digit it is.",
+  "citations": [
+    {
+      "chunk_id": 67,
+      "video_id": 9,
+      "chunk_index": 0,
+      "topic": "Neurons, layers and activations",
+      "start": "00:04",
+      "end": "01:06",
+      "url": "https://www.youtube.com/watch?v=aircAruvnKk&t=4s",
+      "score": 0.6111,
+      "text": "This is a 3. It's sloppily written and rendered at an extremely low resolution of 28x28 pixels, but your brain has no trouble recognizing it as a 3. And I want you to take a moment to appreciate how crazy it is that brains can do this so effortlessly. I mean, this, this and this are also recognizable as 3s, even though the specific values of each pixel is very different from one image to the next. The particular light-sensitive cells in your eye that are firing when you see this 3 are very different from the ones firing when you see this 3. But something in that crazy-smart visual cortex of yours resolves these as representing the same idea, while at the same time recognizing other images as their own distinct ideas. But if I told you, hey, sit down and write for me a program that takes in a grid of 28x28 pixels like this and outputs a single number between 0 and 10, telling you what it thinks the digit is, well the task goes from comically trivial to dauntingly difficult."
+    },
+    {
+      "chunk_id": 73,
+      "video_id": 9,
+      "chunk_index": 6,
+      "topic": "Why layered structure helps",
+      "start": "05:40",
+      "end": "06:40",
+      "url": "https://www.youtube.com/watch?v=aircAruvnKk&t=340s",
+      "score": 0.5833,
+      "text": "to expect a layered structure like this to behave intelligently. What are we expecting here? What is the best hope for what those middle layers might be doing? Well, when you or I recognize digits, we piece together various components. A 9 has a loop up top and a line on the right. An 8 also has a loop up top, but it's paired with another loop down low. A 4 basically breaks down into three specific lines, and things like that. Now in a perfect world, we might hope that each neuron in the second to last layer corresponds with one of these subcomponents, that anytime you feed in an image with, say, a loop up top, like a 9 or an 8, there's some specific neuron whose activation is going to be close to 1. And I don't mean this specific loop of pixels, the hope would be that any generally loopy pattern towards the top sets off this neuron. That way, going from the third layer to the last one just requires learning which combination of subcomponents corresponds to which digits."
+    },
+    {
+      "chunk_id": 68,
+      "video_id": 9,
+      "chunk_index": 1,
+      "topic": "Neurons, layers and activations",
+      "start": "00:59",
+      "end": "02:03",
+      "url": "https://www.youtube.com/watch?v=aircAruvnKk&t=59s",
+      "score": 0.4762,
+      "text": "telling you what it thinks the digit is, well the task goes from comically trivial to dauntingly difficult. Unless you've been living under a rock, I think I hardly need to motivate the relevance and importance of machine learning and neural networks to the present and to the future. But what I want to do here is show you what a neural network actually is, assuming no background, and to help visualize what it's doing, not as a buzzword but as a piece of math. My hope is that you come away feeling like the structure itself is motivated, and to feel like you know what it means when you read, or you hear about a neural network quote-unquote learning. This video is just going to be devoted to the structure component of that, and the following one is going to tackle learning. What we're going to do is put together a neural network that can learn to recognize handwritten digits. This is a somewhat classic example for introducing the topic, and I'm happy to stick with the status quo here, because at the end of the two videos I want to point you to a couple good resources where you can learn more, and where you can download the code that does this and play with it on your own computer."
+    },
+    {
+      "chunk_id": 74,
+      "video_id": 9,
+      "chunk_index": 7,
+      "topic": "Why layered structure helps",
+      "start": "06:32",
+      "end": "07:39",
+      "url": "https://www.youtube.com/watch?v=aircAruvnKk&t=392s",
+      "score": 0.375,
+      "text": "That way, going from the third layer to the last one just requires learning which combination of subcomponents corresponds to which digits. Of course, that just kicks the problem down the road, because how would you recognize these subcomponents, or even learn what the right subcomponents should be? And I still haven't even talked about how one layer influences the next, but run with me on this one for a moment. Recognizing a loop can also break down into subproblems. One reasonable way to do this would be to first recognize the various little edges that make it up. Similarly, a long line, like the kind you might see in the digits 1 or 4 or 7, is really just a long edge, or maybe you think of it as a certain pattern of several smaller edges. So maybe our hope is that each neuron in the second layer of the network corresponds with the various relevant little edges. Maybe when an image like this one comes in, it lights up all of the neurons associated with around 8 to 10 specific little edges, which in turn lights up the neurons associated with the upper loop and a long vertical line, and those light up the neuron associated with a 9."
+    }
+  ],
+  "cached": false
+}

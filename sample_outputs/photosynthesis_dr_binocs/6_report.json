@@ -1,0 +1,184 @@
+{
+  "assessment_id": 2,
+  "learner": {
+    "id": 1,
+    "name": "Sample Learner"
+  },
+  "video": {
+    "id": 2,
+    "title": "Photosynthesis | The Dr. Binocs Show | Learn Videos For Kids"
+  },
+  "generated_at": "2026-10-10T19:18:29+00:00",
+  "overall_performance": {
+    "score": 2.5,
+    "max_score": 4.0,
+    "percentage": 62.5,
+    "level": "developing",
+    "questions": 4,
+    "correct": 2,
+    "partially_correct": 1,
+    "incorrect": 1
+  },
+  "topic_analysis": [
+    {
+      "topic": "Meaning of photosynthesis",
+      "questions": 1,
+      "score": 1.0,
+      "max_score": 1.0,
+      "percentage": 100.0,
+      "level": "strong"
+    },
+    {
+      "topic": "How photosynthesis works",
+      "questions": 2,
+      "score": 0.5,
+      "max_score": 2.0,
+      "percentage": 25.0,
+      "level": "needs_work"
+    },
+    {
+      "topic": "Chlorophyll and plants' role",
+      "questions": 1,
+      "score": 1.0,
+      "max_score": 1.0,
+      "percentage": 100.0,
+      "level": "strong"
+    }
+  ],
+  "skill_analysis": [
+    {
+      "bloom_level": "understand",
+      "questions": 2,
+      "score": 1.0,
+      "max_score": 2.0,
+      "percentage": 50.0,
+      "level": "developing"
+    },
+    {
+      "bloom_level": "apply",
+      "questions": 1,
+      "score": 0.5,
+      "max_score": 1.0,
+      "percentage": 50.0,
+      "level": "developing"
+    },
+    {
+      "bloom_level": "analyze",
+      "questions": 1,
+      "score": 1.0,
+      "max_score": 1.0,
+      "percentage": 100.0,
+      "level": "strong"
+    }
+  ],
+  "strengths": [
+    "What the word photosynthesis means",
+    "Why plants are called the lungs of the world"
+  ],
+  "weaknesses": [
+    "Plants keep the sugar and give out the oxygen",
+    "Carbon dioxide enters through tiny leaf openings called stomata"
+  ],
+  "improvement_suggestions": [
+    "Rewatch 02:25 to 03:37 on what the plant keeps and what it releases.",
+    "Rewatch 00:11 to 02:36 on how carbon dioxide gets into the leaf.",
+    "Draw a leaf and label what goes in and what comes out."
+  ],
+  "ai_summary": "You understand what photosynthesis means and why plants matter for the air we breathe. Next, work on what goes in and out of a leaf during photosynthesis.",
+  "recommended_rewatch": [
+    {
+      "topic": "How photosynthesis works",
+      "from": "00:11",
+      "to": "02:36",
+      "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=11s"
+    },
+    {
+      "topic": "How photosynthesis works",
+      "from": "02:25",
+      "to": "03:37",
+      "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=145s"
+    }
+  ],
+  "question_breakdown": [
+    {
+      "question_id": 5,
+      "type": "mcq",
+      "topic": "Meaning of photosynthesis",
+      "bloom_level": "understand",
+      "prompt": "The name photosynthesis joins two Greek words. What does the full name tell us the process does?",
+      "learner_answer": "It uses light to put things together",
+      "correct_answer": "It uses light to put things together",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Photo means light and synthesis means putting together, so the plant uses light to build its food from simpler things.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Meaning of photosynthesis",
+        "from": "00:11",
+        "to": "02:36",
+        "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=11s"
+      }
+    },
+    {
+      "question_id": 6,
+      "type": "scenario",
+      "topic": "How photosynthesis works",
+      "bloom_level": "apply",
+      "prompt": "A plant's leaves get coated in thick dust that blocks their tiny openings. Which ingredient for making food would the plant have trouble getting, and why?",
+      "learner_answer": "It would have trouble getting carbon dioxide, because the dust stops the sunlight from reaching the leaf.",
+      "correct_answer": "It would have trouble getting carbon dioxide. The plant takes in carbon dioxide through the stomata in its leaves, and those are now blocked.",
+      "score": 0.5,
+      "correctness": "partially_correct",
+      "feedback": "You correctly named carbon dioxide. The reason is that carbon dioxide enters through tiny openings in the leaves called stomata, and the dust blocks them, not the sunlight.",
+      "improvement_areas": [
+        "Stomata and how carbon dioxide enters"
+      ],
+      "video_segment": {
+        "topic": "How photosynthesis works",
+        "from": "00:11",
+        "to": "02:36",
+        "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=11s"
+      }
+    },
+    {
+      "question_id": 7,
+      "type": "true_false",
+      "topic": "How photosynthesis works",
+      "bloom_level": "understand",
+      "prompt": "Plants make sugar by photosynthesis and then release that sugar into the air, keeping the oxygen for themselves.",
+      "learner_answer": "True",
+      "correct_answer": "False",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"False\". It is the other way round. The plant keeps the sugar to use as food and gives the oxygen out into the air.",
+      "improvement_areas": [
+        "How photosynthesis works"
+      ],
+      "video_segment": {
+        "topic": "How photosynthesis works",
+        "from": "02:25",
+        "to": "03:37",
+        "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=145s"
+      }
+    },
+    {
+      "question_id": 8,
+      "type": "short_answer",
+      "topic": "Chlorophyll and plants' role",
+      "bloom_level": "analyze",
+      "prompt": "Why do people call plants the lungs of the world?",
+      "learner_answer": "Because plants take in carbon dioxide and give out oxygen, and people need that oxygen to breathe.",
+      "correct_answer": "Plants take in carbon dioxide and give out oxygen. Humans need that oxygen to breathe.",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "You covered it all: plants take in carbon dioxide, give out oxygen, and people breathe that oxygen.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Chlorophyll and plants' role",
+        "from": "02:25",
+        "to": "03:37",
+        "url": "https://www.youtube.com/watch?v=D1Ymc311XS8&t=145s"
+      }
+    }
+  ]
+}

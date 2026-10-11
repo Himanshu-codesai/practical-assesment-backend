@@ -1,0 +1,83 @@
+# The API only accepts requests and reads data.
+# All slow work (transcription, embedding, LLM calls) runs in the worker.
+x-app: &app
+  build: .
+  env_file: .env
+  environment:
+    DATABASE_URL: postgresql+psycopg://lms:lms@db:5432/lms
+    REDIS_URL: redis://redis:6379/0
+    QDRANT_URL: http://qdrant:6333
+  volumes:
+    - models:/models   # embedding and Whisper model cache, downloaded once
+    - media:/data      # uploaded files, shared by the API (writes) and the worker (reads)
+  depends_on:
+    db:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+    qdrant:
+      condition: service_started
+    llm:
+      condition: service_healthy
+
+services:
+  api:
+    <<: *app
+    ports:
+      - "8001:8000"
+
+  worker:
+    <<: *app
+    # Two queues, so ingestion (CPU-heavy) and assessment work (LLM-bound) can be given
+    # separate workers later. Scale out with: docker compose up --scale worker=3
+    command: celery -A app.worker worker --loglevel=INFO --concurrency=2 -Q ingest,assess
+
+  # The language model. A small gateway that answers POST /v1/messages by running the
+  # Claude command-line tool, signed in with the token from .env. It is not published
+  # on a host port: only the api and worker can reach it.
+  llm:
+    build: ./llm-proxy
+    environment:
+      CLAUDE_CODE_OAUTH_TOKEN: "${CLAUDE_CODE_OAUTH_TOKEN:-}"   # empty: calls go to the fallback server
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8787/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: lms
+      POSTGRES_PASSWORD: lms
+      POSTGRES_DB: lms
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lms -d lms"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes   # persist the queue across restarts
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  qdrant:
+    image: qdrant/qdrant:v1.19.1
+    volumes:
+      - qdrantdata:/qdrant/storage
+
+volumes:
+  pgdata:
+  redisdata:
+  qdrantdata:
+  models:
+  media:
