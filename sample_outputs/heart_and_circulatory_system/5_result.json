@@ -1,0 +1,84 @@
+{
+  "assessment_id": 14,
+  "status": "evaluated",
+  "score": 4.0,
+  "max_score": 4.0,
+  "percentage": 100.0,
+  "results": [
+    {
+      "question_id": 89,
+      "type": "mcq",
+      "topic": "Heart Structure and Blood Flow",
+      "prompt": "Why does it matter that the heart is divided into a right side and a left side?",
+      "options": [
+        "It lets each side beat at a different speed",
+        "It keeps oxygen-rich blood from mixing with oxygen-poor blood",
+        "It lets blood skip the lungs when the body needs it",
+        "It lets the right side carry blood to the whole body"
+      ],
+      "learner_selected_option": 1,
+      "learner_text": null,
+      "correct_option": 1,
+      "reference_answer": null,
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. The division keeps the two kinds of blood apart. Blood the lungs have just refreshed is not watered down by blood that has already given up its oxygen.",
+      "improvement_areas": []
+    },
+    {
+      "question_id": 90,
+      "type": "scenario",
+      "topic": "Heart Structure and Blood Flow",
+      "prompt": "A drop of blood has just returned from the big toe to the heart. Which chambers and organ does it pass through before it leaves the heart through the aorta?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "It goes into the right atrium and then the right ventricle, which pumps it to the lungs to pick up oxygen. It comes back into the left atrium, then the left ventricle, and that pumps it out through the aorta.",
+      "correct_option": null,
+      "reference_answer": "It enters the right atrium and right ventricle, which pump it to the lungs to pick up oxygen. It then comes back to the left atrium and left ventricle and is pumped into the aorta.",
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "You traced the full path correctly: right atrium and right ventricle, out to the lungs for oxygen, then back through the left atrium and left ventricle into the aorta.",
+      "improvement_areas": []
+    },
+    {
+      "question_id": 91,
+      "type": "true_false",
+      "topic": "Cardiac Cycle, Supply and Conduction",
+      "prompt": "The ventricles fill with blood while they contract during systole.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "learner_selected_option": 1,
+      "learner_text": null,
+      "correct_option": 1,
+      "reference_answer": null,
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. During systole the ventricles squeeze blood out. They fill with blood from the atria during diastole, when they relax.",
+      "improvement_areas": []
+    },
+    {
+      "question_id": 92,
+      "type": "true_false",
+      "topic": "Cardiac Cycle, Supply and Conduction",
+      "prompt": "A blocked coronary artery could starve part of the heart muscle of oxygen, even while the heart keeps pumping blood to the body.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 0,
+      "reference_answer": null,
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. The heart muscle gets its own oxygen from the coronary arteries. It does not use the blood passing through its chambers, so a blockage cuts off its supply.",
+      "improvement_areas": []
+    }
+  ]
+}

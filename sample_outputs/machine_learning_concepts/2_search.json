@@ -1,0 +1,39 @@
+{
+  "query": "learning rate too high",
+  "mode": "hybrid",
+  "results": [
+    {
+      "chunk_id": 142,
+      "video_id": 19,
+      "chunk_index": 19,
+      "topic": "Training Mechanics and Evaluation",
+      "start": "20:33",
+      "end": "21:46",
+      "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=1233s",
+      "score": 1.0,
+      "text": "of finding its way all the way down to the valley however a real ball in particular a heavy one has momentum which allows it to shoot over local depressions and keep going down the valley this inspired a variant of gradient descent called momentum based gradient descent Which is less likely to get stuck in local Minima the learning rate is a crucial hyperparameter that determines how much a model adjusts its parameters in response to errors during training like a student adjusting their understanding based on on feedback a model with a high learning rate makes large adjustments to its parameters after seeing each batch of data potentially learning quickly but risking overshooting optimal values conversely a model with a low learning rate makes smaller more cautious adjustments this can be more stable but might take longer to converge or get stuck in suboptimal Solutions finding the right learning rate is often critical for successful training too high and the model might never converge too low and training might take unnecessarily long evaluation is the process of measuring how well a machine learning model performs on data it hasn't seen during training using various metrics appropriate to the task for classification model evaluation might involve measuring accuracy precision recall or F1 score for regression model it might use mean"
+    },
+    {
+      "chunk_id": 140,
+      "video_id": 19,
+      "chunk_index": 17,
+      "topic": "Training Mechanics and Evaluation",
+      "start": "18:21",
+      "end": "19:32",
+      "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=1101s",
+      "score": 0.5,
+      "text": "in the data a hyperparameter is a configuration setting used to control the learning process set before training begins unlike model parameters which are learned during training examples include the learning rate batch size number of epochs or the number of layers in a neural network these are like the knobs and dials that data scientists adjust to optimize how a model learns finding the right hyperparameter values often requires experimentation as their optimal settings can vary significantly between different problems and data sets a cost function also called a loss function objective function or error function is a measure of how wrong a model's predictions are compared to the True Values it quantifies the cost or penalty of incorrect predictions for example in a house price prediction model the cost might be the average difference between predicted and actual prices so in a linear regression model as seen here we often use the mean squared error function that is the squared vertical distances of the data points from the regression line here that is the sum of all the red square areas the further the line from the actual data points the larger the error which we also call loss or cost the goal of training is to minimize this cost function like trying to achieve the lowest possible error score the specific"
+    },
+    {
+      "chunk_id": 135,
+      "video_id": 19,
+      "chunk_index": 12,
+      "topic": "Bias, Variance and Overfitting",
+      "start": "12:56",
+      "end": "14:08",
+      "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=776s",
+      "score": 0.45,
+      "text": "training data a model with high variance is very sensitive to small changes in the training data producing significantly different predictions when trained on slightly different data sets models with low variance like linear regression produce more consistent predictions across different training sets High variance often indicates overfitting where the model is learning the random noise and the training data rather than the true underlying patterns there's typically a trade-off between bias and variance where reducing one tends to increase the other the bias variance trade-off is a fundamental Concept in machine learning that describes the tension between a model's ability to minimize bias and variance at the same time as model complexity increases bias typically decreases because the model can capture more complex patterns but variance increases because the model becomes more sensitive to changes in the training data conversely as model complexity decreases bias increases because the model makes more rigid assumptions but variance decreases because the model becomes more stable finding The Sweet Spot in this tradeoff is crucial the goal is to create a model that's complex enough to capture true patterns in the data but not so complex that it fits to noise this balance typically produces the best generalization to new data this concept is one of the most Central and important concepts of machine learning truly"
+    }
+  ]
+}

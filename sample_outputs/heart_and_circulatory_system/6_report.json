@@ -1,0 +1,156 @@
+{
+  "assessment_id": 14,
+  "learner": {
+    "id": 1,
+    "name": "Sample Learner"
+  },
+  "video": {
+    "id": 18,
+    "title": "The Heart and Circulatory System - How They Work"
+  },
+  "generated_at": "2026-10-11T14:37:03+00:00",
+  "overall_performance": {
+    "score": 4.0,
+    "max_score": 4.0,
+    "percentage": 100.0,
+    "level": "strong",
+    "questions": 4,
+    "correct": 4,
+    "partially_correct": 0,
+    "incorrect": 0
+  },
+  "topic_analysis": [
+    {
+      "topic": "Heart Structure and Blood Flow",
+      "questions": 2,
+      "score": 2.0,
+      "max_score": 2.0,
+      "percentage": 100.0,
+      "level": "strong"
+    },
+    {
+      "topic": "Cardiac Cycle, Supply and Conduction",
+      "questions": 2,
+      "score": 2.0,
+      "max_score": 2.0,
+      "percentage": 100.0,
+      "level": "strong"
+    }
+  ],
+  "skill_analysis": [
+    {
+      "bloom_level": "understand",
+      "questions": 2,
+      "score": 2.0,
+      "max_score": 2.0,
+      "percentage": 100.0,
+      "level": "strong"
+    },
+    {
+      "bloom_level": "apply",
+      "questions": 1,
+      "score": 1.0,
+      "max_score": 1.0,
+      "percentage": 100.0,
+      "level": "strong"
+    },
+    {
+      "bloom_level": "analyze",
+      "questions": 1,
+      "score": 1.0,
+      "max_score": 1.0,
+      "percentage": 100.0,
+      "level": "strong"
+    }
+  ],
+  "strengths": [
+    "Why the right and left sides keep blood apart",
+    "Tracing blood from the body through the lungs to the aorta",
+    "When the ventricles fill and when they squeeze"
+  ],
+  "weaknesses": [],
+  "improvement_suggestions": [
+    "Rewatch 01:21 to 02:57 on how electrical signals time each heartbeat.",
+    "Explain out loud what happens if a heart valve leaks."
+  ],
+  "ai_summary": "Everything here was right, from the path blood takes through the heart to how the coronary arteries feed the heart muscle. Next, go further into how electrical signals set the heartbeat.",
+  "recommended_rewatch": [],
+  "question_breakdown": [
+    {
+      "question_id": 89,
+      "type": "mcq",
+      "topic": "Heart Structure and Blood Flow",
+      "bloom_level": "understand",
+      "prompt": "Why does it matter that the heart is divided into a right side and a left side?",
+      "learner_answer": "It keeps oxygen-rich blood from mixing with oxygen-poor blood",
+      "correct_answer": "It keeps oxygen-rich blood from mixing with oxygen-poor blood",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. The division keeps the two kinds of blood apart. Blood the lungs have just refreshed is not watered down by blood that has already given up its oxygen.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Heart Structure and Blood Flow",
+        "from": "00:00",
+        "to": "01:31",
+        "url": "https://www.youtube.com/watch?v=CWFyxn0qDEU&t=0s"
+      }
+    },
+    {
+      "question_id": 90,
+      "type": "scenario",
+      "topic": "Heart Structure and Blood Flow",
+      "bloom_level": "apply",
+      "prompt": "A drop of blood has just returned from the big toe to the heart. Which chambers and organ does it pass through before it leaves the heart through the aorta?",
+      "learner_answer": "It goes into the right atrium and then the right ventricle, which pumps it to the lungs to pick up oxygen. It comes back into the left atrium, then the left ventricle, and that pumps it out through the aorta.",
+      "correct_answer": "It enters the right atrium and right ventricle, which pump it to the lungs to pick up oxygen. It then comes back to the left atrium and left ventricle and is pumped into the aorta.",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "You traced the full path correctly: right atrium and right ventricle, out to the lungs for oxygen, then back through the left atrium and left ventricle into the aorta.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Heart Structure and Blood Flow",
+        "from": "00:00",
+        "to": "01:31",
+        "url": "https://www.youtube.com/watch?v=CWFyxn0qDEU&t=0s"
+      }
+    },
+    {
+      "question_id": 91,
+      "type": "true_false",
+      "topic": "Cardiac Cycle, Supply and Conduction",
+      "bloom_level": "understand",
+      "prompt": "The ventricles fill with blood while they contract during systole.",
+      "learner_answer": "False",
+      "correct_answer": "False",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. During systole the ventricles squeeze blood out. They fill with blood from the atria during diastole, when they relax.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Cardiac Cycle, Supply and Conduction",
+        "from": "01:21",
+        "to": "02:57",
+        "url": "https://www.youtube.com/watch?v=CWFyxn0qDEU&t=81s"
+      }
+    },
+    {
+      "question_id": 92,
+      "type": "true_false",
+      "topic": "Cardiac Cycle, Supply and Conduction",
+      "bloom_level": "analyze",
+      "prompt": "A blocked coronary artery could starve part of the heart muscle of oxygen, even while the heart keeps pumping blood to the body.",
+      "learner_answer": "True",
+      "correct_answer": "True",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. The heart muscle gets its own oxygen from the coronary arteries. It does not use the blood passing through its chambers, so a blockage cuts off its supply.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Cardiac Cycle, Supply and Conduction",
+        "from": "01:21",
+        "to": "02:57",
+        "url": "https://www.youtube.com/watch?v=CWFyxn0qDEU&t=81s"
+      }
+    }
+  ]
+}

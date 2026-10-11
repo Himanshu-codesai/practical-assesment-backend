@@ -1,0 +1,41 @@
+{
+  "question": "What is the difference between overfitting and underfitting?",
+  "answerable": true,
+  "answer": "Overfitting happens when a model is too complex (or trains too long on too little data) and ends up learning the random noise in the training data instead of the true underlying patterns. The video compares it to a student who memorizes test answers without understanding the concepts: the model does well on the training data but fails to generalize to new examples. Overfitting is associated with high variance. Underfitting is the opposite problem: the model is too simple to capture the important patterns, so it performs poorly on both training and test data. An example is using a straight line to model clearly curved data. Underfitting is associated with high bias. The goal is a model that sits in the 'sweet spot' of the bias-variance trade-off, complex enough to capture the real patterns but not so complex that it fits noise.",
+  "citations": [
+    {
+      "chunk_id": 137,
+      "video_id": 19,
+      "chunk_index": 14,
+      "topic": "Validation and Regularization",
+      "start": "15:08",
+      "end": "16:20",
+      "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=908s",
+      "score": 0.6667,
+      "text": "straight line to model clearly curved data an underfitted model makes oversimplified assumptions about the underlying patterns this typically happens when a model has high bias for example using a linear model to capture relationships that are clearly nonlinear one way to estimate bias and variance during training and thus avoid underfitting and overfitting before applying your model to real world data is validation validation is the practice of evaluating a model's performance on data it hasn't been trained on by setting aside a portion of the training data called the validation set to simulate how well the model will perform on new unseen data cross validation extends this concept by repeatedly training and validating the model on different splits of the data for example in five-fold Cross validation the data is divided into five parts and the model is trained five times each time using a different part as the validation set and the remaining parts for training this practice provides a more robust estimate of the model's True Performance and helps detect potential issues like overfitting or underfitting while validation sets are used during the model development process to make decisions about hyperparameters and model selection the test set is kept completely separate and used only once at the very end to evaluate the final model's performance using the test set"
+    },
+    {
+      "chunk_id": 136,
+      "video_id": 19,
+      "chunk_index": 13,
+      "topic": "Bias, Variance and Overfitting",
+      "start": "14:03",
+      "end": "15:12",
+      "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=843s",
+      "score": 0.5333,
+      "text": "is one of the most Central and important concepts of machine learning truly understanding this concept on all levels will make you a great data scientist and machine learning engineer noise refers to random variations or errors in data that don't represent true underlying patterns like random fluctuations in sensor readings or errors in data collection in machine learning we want to find the true patterns while ignoring this noise noise is what's left over after perfect fitting of the data with a perfect model capturing all the signal in the data overfitting occurs when a machine learning model learns the noise and random fluctuations in the training data rather than learning the true underlying patterns like a student who memorizes test answers without understanding the concepts an overfitted model performs well on training data but fails to generalize to new examples this typically happens when a model is too complex for the task or when it trains for too long on too little data causing it to mistake random noise for Meaningful patterns the model has high variance under fitting occurs when a machine learning model is too simple to capture the important patterns in the data resulting in poor performance on both training and test data like using a straight line to model clearly curved data an underfitted model makes"
+    },
+    {
+      "chunk_id": 135,
+      "video_id": 19,
+      "chunk_index": 12,
+      "topic": "Bias, Variance and Overfitting",
+      "start": "12:56",
+      "end": "14:08",
+      "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=776s",
+      "score": 0.4762,
+      "text": "training data a model with high variance is very sensitive to small changes in the training data producing significantly different predictions when trained on slightly different data sets models with low variance like linear regression produce more consistent predictions across different training sets High variance often indicates overfitting where the model is learning the random noise and the training data rather than the true underlying patterns there's typically a trade-off between bias and variance where reducing one tends to increase the other the bias variance trade-off is a fundamental Concept in machine learning that describes the tension between a model's ability to minimize bias and variance at the same time as model complexity increases bias typically decreases because the model can capture more complex patterns but variance increases because the model becomes more sensitive to changes in the training data conversely as model complexity decreases bias increases because the model makes more rigid assumptions but variance decreases because the model becomes more stable finding The Sweet Spot in this tradeoff is crucial the goal is to create a model that's complex enough to capture true patterns in the data but not so complex that it fits to noise this balance typically produces the best generalization to new data this concept is one of the most Central and important concepts of machine learning truly"
+    }
+  ],
+  "cached": false
+}

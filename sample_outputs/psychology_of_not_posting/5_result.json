@@ -1,0 +1,170 @@
+{
+  "assessment_id": 16,
+  "status": "evaluated",
+  "score": 2.75,
+  "max_score": 8.0,
+  "percentage": 34.4,
+  "results": [
+    {
+      "question_id": 93,
+      "type": "mcq",
+      "topic": "Four Social Media Posting Types",
+      "prompt": "A friend posts several times a day to 3,000 followers. What does the Spanish study suggest about who sees those posts?",
+      "options": [
+        "A large crowd made up mostly of close friends",
+        "A large crowd of people they barely know",
+        "A small crowd, since heavy posting drives followers away",
+        "A tight group, since frequent posting builds closer ties"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 1,
+      "reference_answer": null,
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"A large crowd of people they barely know\". Everything posters had the most followers but knew them the least. The more you broadcast, the bigger and blurrier your audience gets.",
+      "improvement_areas": [
+        "Four Social Media Posting Types"
+      ]
+    },
+    {
+      "question_id": 94,
+      "type": "true_false",
+      "topic": "Reward Prediction Error and Likes",
+      "prompt": "True or false: getting 200 likes on a post you fully expected to get 200 likes should give only a small dopamine jolt.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 0,
+      "reference_answer": null,
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Dopamine responds to the gap between what you expected and what you got. With no gap, there is little prediction error, so the jolt is small.",
+      "improvement_areas": []
+    },
+    {
+      "question_id": 95,
+      "type": "mcq",
+      "topic": "Reward Prediction Error and Likes",
+      "prompt": "Two people each get 40 likes on a post. Who is most likely to feel a jolt of excitement?",
+      "options": [
+        "The one who expected about 100 likes",
+        "The one with more followers overall",
+        "The one who expected about 10 likes",
+        "Both equally, since they got the same likes"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 2,
+      "reference_answer": null,
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"The one who expected about 10 likes\". Excitement comes when reality beats expectation. Forty likes beats an expectation of 10 but falls short of 100, which would cause a dip.",
+      "improvement_areas": [
+        "Reward Prediction Error and Likes"
+      ]
+    },
+    {
+      "question_id": 96,
+      "type": "short_answer",
+      "topic": "Reinforcement, Extinction and Going Quiet",
+      "prompt": "How does Skinner's pigeon experiment explain why someone gradually stops posting on social media?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "When you stop getting likes it is like the pigeon not getting food any more, so you slowly stop posting.",
+      "correct_option": null,
+      "reference_answer": "Posting is like pecking the lever and likes are the food pellet. When posts keep getting few likes, the behavior fades through extinction, often without the person ever deciding to stop.",
+      "score": 0.75,
+      "max_score": 1.0,
+      "correctness": "partially_correct",
+      "feedback": "You matched likes to the food pellet and saw that posting fades when rewards stop. You missed that this fading, called extinction, happens without the person ever deciding to quit.",
+      "improvement_areas": [
+        "Stopping without a conscious decision"
+      ]
+    },
+    {
+      "question_id": 97,
+      "type": "true_false",
+      "topic": "Reinforcement, Extinction and Going Quiet",
+      "prompt": "True or false: hiding like counts helps mainly because you can never see your likes again.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 1,
+      "reference_answer": null,
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"False\". You can still check likes on purpose. The point is that rewards stop arriving on the app's schedule and arrive on yours, so the app can't condition you.",
+      "improvement_areas": [
+        "Reinforcement, Extinction and Going Quiet"
+      ]
+    },
+    {
+      "question_id": 98,
+      "type": "scenario",
+      "topic": "Passive Viewing and Social Comparison",
+      "prompt": "Lena never posts but scrolls through strangers' solo selfies for an hour every day. She says not posting keeps her safe. How would the 2016 study respond?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "The study would say she should start posting more so that she feels included.",
+      "correct_option": null,
+      "reference_answer": "Not posting doesn't protect her, since posting had no measurable effect. Viewing lots of selfies was linked to lower self-esteem and life satisfaction because it triggers upward comparison.",
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "The study found posting had no measurable effect either way. Viewing lots of solo selfies was linked to lower self-esteem and life satisfaction through upward social comparison.",
+      "improvement_areas": [
+        "Posting had no measurable effect",
+        "Selfie viewing and social comparison"
+      ]
+    },
+    {
+      "question_id": 99,
+      "type": "true_false",
+      "topic": "Passive Viewing and Social Comparison",
+      "prompt": "True or false: a non-poster whose feed is mostly group photos of friends would likely feel better than one viewing solo selfies.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 0,
+      "reference_answer": null,
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Viewing group photos was linked to higher self-esteem and life satisfaction. Group photos look like belonging, while solo selfies invite upward comparison.",
+      "improvement_areas": []
+    },
+    {
+      "question_id": 100,
+      "type": "scenario",
+      "topic": "Posting for Your Village",
+      "prompt": "Raj starts posting photos of his beetle collection to find other collectors. After two weeks, his posts get almost no likes. What should Raj do next, based on the video's advice?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "He should delete those posts and switch to things that are more popular, like pets.",
+      "correct_option": null,
+      "reference_answer": "Raj should keep posting through the early silence and post for his village, not for likes. Quitting now would let a lack of reward train him into silence before his people find him.",
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "The video advises Raj to keep posting through the early silence for his village, not for likes. He shouldn't let the like count judge his posts, since quitting is extinction and hides him from his people.",
+      "improvement_areas": [
+        "Posting for your village",
+        "Pushing through early silence"
+      ]
+    }
+  ]
+}

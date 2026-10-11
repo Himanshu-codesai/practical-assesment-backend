@@ -1,0 +1,35 @@
+{
+  "id": 20,
+  "title": "The Psychology of People Who Don't Post on Social Media (Explained by a Neuroscientist)",
+  "source_type": "youtube",
+  "source_url": "https://www.youtube.com/watch?v=5pcw25mQxCg",
+  "status": "ready",
+  "error": null,
+  "duration_seconds": 791.8,
+  "transcript_method": "whisper",
+  "transcript_source": "whisper",
+  "summary": "A cognitive neuroscientist explains why some people rarely or never post on social media, drawing on three experiments. A study of young people's sharing found four posting archetypes, with seldom posters being the largest group (about 37 percent). An experiment that manipulated likes showed how reward prediction error and Skinner-style reinforcement and extinction shape posting behaviour, so that going quiet is usually trained rather than chosen. A third study linked passively viewing selfies, through social comparison, to lower self-esteem, while group photos were linked to higher wellbeing. The video ends by urging viewers to post and engage on their own terms for their 'village' rather than for likes, with a practical tool given after each study.",
+  "topics": [
+    {
+      "name": "Four Social Media Posting Types",
+      "summary": "A Spanish study identified four posting archetypes, from seldom posters (37 percent) to everything posters, and found that people who broadcast more have larger audiences they know less well; viewers are asked to check their own follower list."
+    },
+    {
+      "name": "Reward Prediction Error and Likes",
+      "summary": "An experiment that secretly manipulated likes showed that dopamine responds to the gap between expected and actual engagement, and that this gap shifts what and how often people post."
+    },
+    {
+      "name": "Reinforcement, Extinction and Going Quiet",
+      "summary": "Skinner's pigeon box explains feeds as variable reward schedules, explains that people who stop posting have usually had the behaviour extinguished through lack of reinforcement, and suggests hiding like counts and notifications."
+    },
+    {
+      "name": "Passive Viewing and Social Comparison",
+      "summary": "A 2016 study linked viewing others' selfies to lower self-esteem and life satisfaction and viewing group photos to higher wellbeing, with posting itself showing no effect; the proposed cause is upward social comparison, and viewers are told to audit their feed."
+    },
+    {
+      "name": "Posting for Your Village",
+      "summary": "The speaker argues that reinforcement silences people who could find their niche community, and urges posting for one's own people rather than for likes, pushing through early silence, and actively engaging instead of only watching."
+    }
+  ],
+  "created_at": "2026-10-11T14:29:18.482236Z"
+}

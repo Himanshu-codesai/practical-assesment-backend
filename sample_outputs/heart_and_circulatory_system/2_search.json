@@ -1,0 +1,28 @@
+{
+  "query": "what do the coronary arteries do",
+  "mode": "hybrid",
+  "results": [
+    {
+      "chunk_id": 122,
+      "video_id": 18,
+      "chunk_index": 1,
+      "topic": "Cardiac Cycle, Supply and Conduction",
+      "start": "01:21",
+      "end": "02:57",
+      "url": "https://www.youtube.com/watch?v=CWFyxn0qDEU&t=81s",
+      "score": 1.0,
+      "text": "open only one way and only when pushed on each valve opens and closes once per heartbeat or about once every second a beating heart contracts and relaxes contraction is called syy and relaxing is called diast during syy your ventricles contract forcing blood into the vessels going to your lungs and body much like ketchup being forced out of a squeeze bottle the right ventricle contracts a little bit before the left ventricle does your ventricles then relax during diast and are filled f with blood coming from The upper chambers the left and right Atria then the cycle starts over again your heart is nourished by blood too blood vessels called coronary arteries extend over the surface of your heart and Branch into smaller capillaries here you can see just the network of blood vessels that feed your heart with oxygen-rich blood your heart also has electrical wiring which keeps it beating electrical impulses begin high in the right atrium and travel through specialized Pathways to the ventricles delivering the signal to pump the conduction system keeps your heartbeating in a coordinated and normal Rhythm which in turn keeps blood circulating The Continuous exchange of oxygen rich blood with oxygen poor blood is what keeps you alive"
+    },
+    {
+      "chunk_id": 121,
+      "video_id": 18,
+      "chunk_index": 0,
+      "topic": "Heart Structure and Blood Flow",
+      "start": "00:00",
+      "end": "01:31",
+      "url": "https://www.youtube.com/watch?v=CWFyxn0qDEU&t=0s",
+      "score": 0.6667,
+      "text": "your heart is a pump it's a muscular organ about the size of your fist and is located slightly left of center in your chest your heart is divided into the right and left side the division protects oxygen rich blood from mixing with oxygen poor blood together your heart and blood vessels comprise your cardiovascular system which circulates blood and oxygen around your body in fact your heart pumps about five quarts of blood every minute and it beats about 100,000 times in one day that's about 35 million times in a year oxygen poor blood blue blood returns to the heart after circulating through your body the right side of the heart composed of the right atrium and ventricle collects and pumps the blood to the lungs through the pulmonary arteries the lungs refresh the blood with a new supply of oxygen making it turn red oxygen rich blood red blood then enters the left side of the heart composed of the left atrium and ventricle and is pumped through the aorta to the body to supply tissues with oxygen four valves within your heart keep your blood moving the right way the tricuspid mital pulmonary and aortic valves work like Gates on a fence they open only one way and only when pushed on each valve opens and closes once per"
+    }
+  ]
+}

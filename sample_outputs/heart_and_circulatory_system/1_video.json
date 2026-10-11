@@ -1,0 +1,23 @@
+{
+  "id": 18,
+  "title": "The Heart and Circulatory System - How They Work",
+  "source_type": "youtube",
+  "source_url": "https://www.youtube.com/watch?v=CWFyxn0qDEU",
+  "status": "ready",
+  "error": null,
+  "duration_seconds": 178.0,
+  "transcript_method": "auto",
+  "transcript_source": "captions",
+  "summary": "This short video explains how the heart works as a muscular pump at the center of the cardiovascular system. It describes how oxygen-poor blood passes through the right side of the heart to the lungs, and how oxygen-rich blood returns to the left side and is pumped through the aorta to the body, with four one-way valves keeping the flow in the right direction. It then explains the cardiac cycle of systole and diastole, how the coronary arteries supply the heart muscle with its own blood, and how the heart's electrical conduction system keeps it beating in a coordinated rhythm.",
+  "topics": [
+    {
+      "name": "Heart Structure and Blood Flow",
+      "summary": "Introduces the heart as a fist-sized pump divided into right and left sides and traces oxygen-poor blood through the right atrium and ventricle to the lungs and oxygen-rich blood through the left side and aorta to the body, with the tricuspid, mitral, pulmonary and aortic valves acting as one-way gates."
+    },
+    {
+      "name": "Cardiac Cycle, Supply and Conduction",
+      "summary": "Explains systole and diastole as the heart's contraction and relaxation phases, how coronary arteries nourish the heart muscle, and how electrical impulses starting in the right atrium coordinate the heartbeat."
+    }
+  ],
+  "created_at": "2026-10-11T14:29:18.072843Z"
+}

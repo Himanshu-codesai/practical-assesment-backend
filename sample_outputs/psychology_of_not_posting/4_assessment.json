@@ -1,0 +1,101 @@
+{
+  "id": 16,
+  "learner_id": 1,
+  "video_id": 20,
+  "status": "ready",
+  "error": null,
+  "created_at": "2026-10-11T14:35:03.301663Z",
+  "questions": [
+    {
+      "id": 93,
+      "position": 0,
+      "type": "mcq",
+      "bloom_level": "apply",
+      "topic": "Four Social Media Posting Types",
+      "prompt": "A friend posts several times a day to 3,000 followers. What does the Spanish study suggest about who sees those posts?",
+      "options": [
+        "A large crowd made up mostly of close friends",
+        "A large crowd of people they barely know",
+        "A small crowd, since heavy posting drives followers away",
+        "A tight group, since frequent posting builds closer ties"
+      ]
+    },
+    {
+      "id": 94,
+      "position": 1,
+      "type": "true_false",
+      "bloom_level": "understand",
+      "topic": "Reward Prediction Error and Likes",
+      "prompt": "True or false: getting 200 likes on a post you fully expected to get 200 likes should give only a small dopamine jolt.",
+      "options": [
+        "True",
+        "False"
+      ]
+    },
+    {
+      "id": 95,
+      "position": 2,
+      "type": "mcq",
+      "bloom_level": "apply",
+      "topic": "Reward Prediction Error and Likes",
+      "prompt": "Two people each get 40 likes on a post. Who is most likely to feel a jolt of excitement?",
+      "options": [
+        "The one who expected about 100 likes",
+        "The one with more followers overall",
+        "The one who expected about 10 likes",
+        "Both equally, since they got the same likes"
+      ]
+    },
+    {
+      "id": 96,
+      "position": 3,
+      "type": "short_answer",
+      "bloom_level": "understand",
+      "topic": "Reinforcement, Extinction and Going Quiet",
+      "prompt": "How does Skinner's pigeon experiment explain why someone gradually stops posting on social media?",
+      "options": []
+    },
+    {
+      "id": 97,
+      "position": 4,
+      "type": "true_false",
+      "bloom_level": "understand",
+      "topic": "Reinforcement, Extinction and Going Quiet",
+      "prompt": "True or false: hiding like counts helps mainly because you can never see your likes again.",
+      "options": [
+        "True",
+        "False"
+      ]
+    },
+    {
+      "id": 98,
+      "position": 5,
+      "type": "scenario",
+      "bloom_level": "apply",
+      "topic": "Passive Viewing and Social Comparison",
+      "prompt": "Lena never posts but scrolls through strangers' solo selfies for an hour every day. She says not posting keeps her safe. How would the 2016 study respond?",
+      "options": []
+    },
+    {
+      "id": 99,
+      "position": 6,
+      "type": "true_false",
+      "bloom_level": "analyze",
+      "topic": "Passive Viewing and Social Comparison",
+      "prompt": "True or false: a non-poster whose feed is mostly group photos of friends would likely feel better than one viewing solo selfies.",
+      "options": [
+        "True",
+        "False"
+      ]
+    },
+    {
+      "id": 100,
+      "position": 7,
+      "type": "scenario",
+      "bloom_level": "apply",
+      "topic": "Posting for Your Village",
+      "prompt": "Raj starts posting photos of his beetle collection to find other collectors. After two weeks, his posts get almost no likes. What should Raj do next, based on the video's advice?",
+      "options": []
+    }
+  ]
+}

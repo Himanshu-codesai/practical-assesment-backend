@@ -1,0 +1,304 @@
+{
+  "assessment_id": 15,
+  "learner": {
+    "id": 1,
+    "name": "Sample Learner"
+  },
+  "video": {
+    "id": 19,
+    "title": "All Machine Learning Concepts Explained in 22 Minutes"
+  },
+  "generated_at": "2026-10-11T14:37:25+00:00",
+  "overall_performance": {
+    "score": 5.0,
+    "max_score": 8.0,
+    "percentage": 62.5,
+    "level": "developing",
+    "questions": 8,
+    "correct": 4,
+    "partially_correct": 2,
+    "incorrect": 2
+  },
+  "topic_analysis": [
+    {
+      "topic": "Core ML Foundations",
+      "questions": 2,
+      "score": 2.0,
+      "max_score": 2.0,
+      "percentage": 100.0,
+      "level": "strong"
+    },
+    {
+      "topic": "Supervised, Unsupervised, Reinforcement Learning",
+      "questions": 1,
+      "score": 1.0,
+      "max_score": 1.0,
+      "percentage": 100.0,
+      "level": "strong"
+    },
+    {
+      "topic": "Features, Targets and Datasets",
+      "questions": 2,
+      "score": 0.0,
+      "max_score": 2.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    },
+    {
+      "topic": "Bias, Variance and Overfitting",
+      "questions": 1,
+      "score": 0.67,
+      "max_score": 1.0,
+      "percentage": 67.0,
+      "level": "developing"
+    },
+    {
+      "topic": "Validation and Regularization",
+      "questions": 1,
+      "score": 0.33,
+      "max_score": 1.0,
+      "percentage": 33.0,
+      "level": "needs_work"
+    },
+    {
+      "topic": "Training Mechanics and Evaluation",
+      "questions": 1,
+      "score": 1.0,
+      "max_score": 1.0,
+      "percentage": 100.0,
+      "level": "strong"
+    }
+  ],
+  "skill_analysis": [
+    {
+      "bloom_level": "apply",
+      "questions": 3,
+      "score": 2.33,
+      "max_score": 3.0,
+      "percentage": 77.7,
+      "level": "developing"
+    },
+    {
+      "bloom_level": "understand",
+      "questions": 2,
+      "score": 1.0,
+      "max_score": 2.0,
+      "percentage": 50.0,
+      "level": "developing"
+    },
+    {
+      "bloom_level": "analyze",
+      "questions": 3,
+      "score": 1.67,
+      "max_score": 3.0,
+      "percentage": 55.7,
+      "level": "developing"
+    }
+  ],
+  "strengths": [
+    "Spotting data leakage from scaling before the split",
+    "Choosing unsupervised learning for unlabeled grouping",
+    "Lowering the learning rate when training won't settle"
+  ],
+  "weaknesses": [
+    "Why features with large numbers dominate without scaling",
+    "How adding many features makes patterns harder to find",
+    "Variance rising with model complexity and tuning on validation sets"
+  ],
+  "improvement_suggestions": [
+    "Rewatch 07:27 to 09:45 on feature scaling and the curse of dimensionality.",
+    "Rewatch 12:56 to 14:08 on how variance grows with polynomial order.",
+    "Rewatch 15:08 to 16:20 on validation sets and using the test set once."
+  ],
+  "ai_summary": "You understand data leakage, model fitting and the learning types well. Work next on how features behave, especially scaling and why too many features hurt.",
+  "recommended_rewatch": [
+    {
+      "topic": "Features, Targets and Datasets",
+      "from": "07:27",
+      "to": "08:38",
+      "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=447s"
+    },
+    {
+      "topic": "Features, Targets and Datasets",
+      "from": "08:32",
+      "to": "09:45",
+      "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=512s"
+    },
+    {
+      "topic": "Bias, Variance and Overfitting",
+      "from": "12:56",
+      "to": "14:08",
+      "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=776s"
+    },
+    {
+      "topic": "Validation and Regularization",
+      "from": "15:08",
+      "to": "16:20",
+      "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=908s"
+    }
+  ],
+  "question_breakdown": [
+    {
+      "question_id": 101,
+      "type": "mcq",
+      "topic": "Core ML Foundations",
+      "bloom_level": "apply",
+      "prompt": "A team scales all features using statistics from the full dataset, then splits off the test set. What problem have they created?",
+      "learner_answer": "Data leakage, because test data shaped the training",
+      "correct_answer": "Data leakage, because test data shaped the training",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Any use of test data before the final test, even partly, is data leakage. Here the test values influenced the scaling the model trained on.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Core ML Foundations",
+        "from": "04:15",
+        "to": "05:23",
+        "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=255s"
+      }
+    },
+    {
+      "question_id": 102,
+      "type": "true_false",
+      "topic": "Core ML Foundations",
+      "bloom_level": "understand",
+      "prompt": "In a linear model of house price from square footage, training means searching for the slope and intercept that best match the data.",
+      "learner_answer": "True",
+      "correct_answer": "True",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Model fitting adjusts a model's parameters to best match the data. For a line, those parameters are the slope and the intercept.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Core ML Foundations",
+        "from": "03:15",
+        "to": "04:21",
+        "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=195s"
+      }
+    },
+    {
+      "question_id": 103,
+      "type": "scenario",
+      "topic": "Supervised, Unsupervised, Reinforcement Learning",
+      "bloom_level": "apply",
+      "prompt": "A music app has listening histories for millions of users but no tags or categories. It wants to find groups of users with similar tastes. Which type of learning fits, and why?",
+      "learner_answer": "Unsupervised learning, because the data has no labels and the app wants to find natural groups of similar users.",
+      "correct_answer": "Unsupervised learning fits, because there are no labels and the goal is to discover natural groupings in the data.",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "You named unsupervised learning, noted the data has no labels, and said the goal is to find natural groups of similar users.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Supervised, Unsupervised, Reinforcement Learning",
+        "from": "05:17",
+        "to": "06:28",
+        "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=317s"
+      }
+    },
+    {
+      "question_id": 104,
+      "type": "mcq",
+      "topic": "Features, Targets and Datasets",
+      "bloom_level": "analyze",
+      "prompt": "A model uses age, in years, and salary, in dollars, as features without scaling. What is the likely problem?",
+      "learner_answer": "Age dominates because it changes more often",
+      "correct_answer": "Salary dominates because its numbers are much larger",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"Salary dominates because its numbers are much larger\". Features with larger ranges can dominate learning. Scaling puts salary and age on a similar scale so neither overwhelms the other.",
+      "improvement_areas": [
+        "Features, Targets and Datasets"
+      ],
+      "video_segment": {
+        "topic": "Features, Targets and Datasets",
+        "from": "07:27",
+        "to": "08:38",
+        "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=447s"
+      }
+    },
+    {
+      "question_id": 105,
+      "type": "true_false",
+      "topic": "Features, Targets and Datasets",
+      "bloom_level": "understand",
+      "prompt": "Adding more and more features always makes patterns easier to find, since the model has more information.",
+      "learner_answer": "True",
+      "correct_answer": "False",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"False\". With many dimensions, data becomes sparse and patterns get harder to find. This is the curse of dimensionality.",
+      "improvement_areas": [
+        "Features, Targets and Datasets"
+      ],
+      "video_segment": {
+        "topic": "Features, Targets and Datasets",
+        "from": "08:32",
+        "to": "09:45",
+        "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=512s"
+      }
+    },
+    {
+      "question_id": 106,
+      "type": "short_answer",
+      "topic": "Bias, Variance and Overfitting",
+      "bloom_level": "analyze",
+      "prompt": "As you raise the polynomial order of a regression model, what happens to its bias and to its variance?",
+      "learner_answer": "Bias goes down because the model gets more complex and can bend to fit the data.",
+      "correct_answer": "Bias goes down because the model is more flexible, while variance goes up because it becomes more sensitive to the training data.",
+      "score": 0.67,
+      "correctness": "partially_correct",
+      "feedback": "You correctly said bias drops as the model gets more complex and flexible. You missed that variance rises, since the model becomes more sensitive to changes in the training data.",
+      "improvement_areas": [
+        "Variance and model complexity",
+        "Bias variance trade-off"
+      ],
+      "video_segment": {
+        "topic": "Bias, Variance and Overfitting",
+        "from": "12:56",
+        "to": "14:08",
+        "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=776s"
+      }
+    },
+    {
+      "question_id": 107,
+      "type": "scenario",
+      "topic": "Validation and Regularization",
+      "bloom_level": "apply",
+      "prompt": "A data scientist checks the test set after every hyperparameter change and keeps whatever scores best. What is wrong with this, and what should she use instead?",
+      "learner_answer": "She is overfitting to the test set. She should collect more data to test on.",
+      "correct_answer": "Using the test set repeatedly risks overfitting to it. She should tune with a validation set or cross-validation and use the test set once at the end.",
+      "score": 0.33,
+      "correctness": "partially_correct",
+      "feedback": "You correctly spotted the risk of overfitting to the test set. She should tune with a validation set or cross-validation, and use the test set only once on the final model.",
+      "improvement_areas": [
+        "Validation sets and cross-validation",
+        "One-time use of the test set"
+      ],
+      "video_segment": {
+        "topic": "Validation and Regularization",
+        "from": "15:08",
+        "to": "16:20",
+        "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=908s"
+      }
+    },
+    {
+      "question_id": 108,
+      "type": "mcq",
+      "topic": "Training Mechanics and Evaluation",
+      "bloom_level": "analyze",
+      "prompt": "During training, the error jumps around and never settles near a minimum. Which change is most likely to help?",
+      "learner_answer": "Lower the learning rate to take smaller steps",
+      "correct_answer": "Lower the learning rate to take smaller steps",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. A learning rate that is too high makes large steps that overshoot good values, so the model may never converge. Smaller steps are more stable.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Training Mechanics and Evaluation",
+        "from": "20:33",
+        "to": "21:46",
+        "url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU&t=1233s"
+      }
+    }
+  ]
+}

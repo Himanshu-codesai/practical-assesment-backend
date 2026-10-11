@@ -1,0 +1,39 @@
+{
+  "id": 19,
+  "title": "All Machine Learning Concepts Explained in 22 Minutes",
+  "source_type": "youtube",
+  "source_url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU",
+  "status": "ready",
+  "error": null,
+  "duration_seconds": 1343.9,
+  "transcript_method": "auto",
+  "transcript_source": "captions",
+  "summary": "This video gives a rapid tour of the basic vocabulary of machine learning in about 22 minutes. It starts with foundations: AI versus machine learning, algorithms, data, models, training, and the split between training and test data. It then covers the three learning paradigms and the anatomy of a dataset (features, feature engineering, scaling, dimensionality, targets, instances and labels). The core of the video explains model complexity, bias, variance, noise, overfitting and underfitting, and how validation, cross-validation and regularization deal with them. It ends with the mechanics of training (batches, epochs, parameters, hyperparameters, cost functions, gradient descent, learning rate) and model evaluation.",
+  "topics": [
+    {
+      "name": "Core ML Foundations",
+      "summary": "Defines artificial intelligence versus machine learning, algorithms, data, models, model fitting, and training versus test data, including data leakage."
+    },
+    {
+      "name": "Supervised, Unsupervised, Reinforcement Learning",
+      "summary": "Contrasts learning from labeled examples, finding structure in unlabeled data, and learning through trial-and-error rewards."
+    },
+    {
+      "name": "Features, Targets and Datasets",
+      "summary": "Explains features, feature engineering, feature scaling, dimensionality and its curse, targets, instances, and labels as the building blocks of a dataset."
+    },
+    {
+      "name": "Bias, Variance and Overfitting",
+      "summary": "Covers model complexity, bias, variance, the bias-variance trade-off, noise, overfitting and underfitting."
+    },
+    {
+      "name": "Validation and Regularization",
+      "summary": "Describes validation sets, k-fold cross-validation, keeping the test set separate, and regularization as ways to detect and prevent overfitting."
+    },
+    {
+      "name": "Training Mechanics and Evaluation",
+      "summary": "Explains batches, iterations, epochs, parameters versus hyperparameters, cost functions, gradient descent with momentum, the learning rate, and evaluation metrics."
+    }
+  ],
+  "created_at": "2026-10-11T14:29:18.298322Z"
+}

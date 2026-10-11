@@ -1,0 +1,103 @@
+{
+  "id": 15,
+  "learner_id": 1,
+  "video_id": 19,
+  "status": "ready",
+  "error": null,
+  "created_at": "2026-10-11T14:35:03.065021Z",
+  "questions": [
+    {
+      "id": 101,
+      "position": 0,
+      "type": "mcq",
+      "bloom_level": "apply",
+      "topic": "Core ML Foundations",
+      "prompt": "A team scales all features using statistics from the full dataset, then splits off the test set. What problem have they created?",
+      "options": [
+        "Underfitting, because scaling removes useful detail",
+        "Data leakage, because test data shaped the training",
+        "High bias, because the model becomes too simple",
+        "No problem, because scaling does not change labels"
+      ]
+    },
+    {
+      "id": 102,
+      "position": 1,
+      "type": "true_false",
+      "bloom_level": "understand",
+      "topic": "Core ML Foundations",
+      "prompt": "In a linear model of house price from square footage, training means searching for the slope and intercept that best match the data.",
+      "options": [
+        "True",
+        "False"
+      ]
+    },
+    {
+      "id": 103,
+      "position": 2,
+      "type": "scenario",
+      "bloom_level": "apply",
+      "topic": "Supervised, Unsupervised, Reinforcement Learning",
+      "prompt": "A music app has listening histories for millions of users but no tags or categories. It wants to find groups of users with similar tastes. Which type of learning fits, and why?",
+      "options": []
+    },
+    {
+      "id": 104,
+      "position": 3,
+      "type": "mcq",
+      "bloom_level": "analyze",
+      "topic": "Features, Targets and Datasets",
+      "prompt": "A model uses age, in years, and salary, in dollars, as features without scaling. What is the likely problem?",
+      "options": [
+        "Age dominates because it changes more often",
+        "Salary dominates because its numbers are much larger",
+        "Both features are ignored by the model",
+        "The target becomes harder to define"
+      ]
+    },
+    {
+      "id": 105,
+      "position": 4,
+      "type": "true_false",
+      "bloom_level": "understand",
+      "topic": "Features, Targets and Datasets",
+      "prompt": "Adding more and more features always makes patterns easier to find, since the model has more information.",
+      "options": [
+        "True",
+        "False"
+      ]
+    },
+    {
+      "id": 106,
+      "position": 5,
+      "type": "short_answer",
+      "bloom_level": "analyze",
+      "topic": "Bias, Variance and Overfitting",
+      "prompt": "As you raise the polynomial order of a regression model, what happens to its bias and to its variance?",
+      "options": []
+    },
+    {
+      "id": 107,
+      "position": 6,
+      "type": "scenario",
+      "bloom_level": "apply",
+      "topic": "Validation and Regularization",
+      "prompt": "A data scientist checks the test set after every hyperparameter change and keeps whatever scores best. What is wrong with this, and what should she use instead?",
+      "options": []
+    },
+    {
+      "id": 108,
+      "position": 7,
+      "type": "mcq",
+      "bloom_level": "analyze",
+      "topic": "Training Mechanics and Evaluation",
+      "prompt": "During training, the error jumps around and never settles near a minimum. Which change is most likely to help?",
+      "options": [
+        "Raise the learning rate to move faster",
+        "Add more epochs at the same settings",
+        "Lower the learning rate to take smaller steps",
+        "Remove momentum so steps stay steady"
+      ]
+    }
+  ]
+}

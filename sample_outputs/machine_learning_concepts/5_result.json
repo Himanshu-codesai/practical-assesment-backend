@@ -1,0 +1,168 @@
+{
+  "assessment_id": 15,
+  "status": "evaluated",
+  "score": 5.0,
+  "max_score": 8.0,
+  "percentage": 62.5,
+  "results": [
+    {
+      "question_id": 101,
+      "type": "mcq",
+      "topic": "Core ML Foundations",
+      "prompt": "A team scales all features using statistics from the full dataset, then splits off the test set. What problem have they created?",
+      "options": [
+        "Underfitting, because scaling removes useful detail",
+        "Data leakage, because test data shaped the training",
+        "High bias, because the model becomes too simple",
+        "No problem, because scaling does not change labels"
+      ],
+      "learner_selected_option": 1,
+      "learner_text": null,
+      "correct_option": 1,
+      "reference_answer": null,
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Any use of test data before the final test, even partly, is data leakage. Here the test values influenced the scaling the model trained on.",
+      "improvement_areas": []
+    },
+    {
+      "question_id": 102,
+      "type": "true_false",
+      "topic": "Core ML Foundations",
+      "prompt": "In a linear model of house price from square footage, training means searching for the slope and intercept that best match the data.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 0,
+      "reference_answer": null,
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Model fitting adjusts a model's parameters to best match the data. For a line, those parameters are the slope and the intercept.",
+      "improvement_areas": []
+    },
+    {
+      "question_id": 103,
+      "type": "scenario",
+      "topic": "Supervised, Unsupervised, Reinforcement Learning",
+      "prompt": "A music app has listening histories for millions of users but no tags or categories. It wants to find groups of users with similar tastes. Which type of learning fits, and why?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "Unsupervised learning, because the data has no labels and the app wants to find natural groups of similar users.",
+      "correct_option": null,
+      "reference_answer": "Unsupervised learning fits, because there are no labels and the goal is to discover natural groupings in the data.",
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "You named unsupervised learning, noted the data has no labels, and said the goal is to find natural groups of similar users.",
+      "improvement_areas": []
+    },
+    {
+      "question_id": 104,
+      "type": "mcq",
+      "topic": "Features, Targets and Datasets",
+      "prompt": "A model uses age, in years, and salary, in dollars, as features without scaling. What is the likely problem?",
+      "options": [
+        "Age dominates because it changes more often",
+        "Salary dominates because its numbers are much larger",
+        "Both features are ignored by the model",
+        "The target becomes harder to define"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 1,
+      "reference_answer": null,
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"Salary dominates because its numbers are much larger\". Features with larger ranges can dominate learning. Scaling puts salary and age on a similar scale so neither overwhelms the other.",
+      "improvement_areas": [
+        "Features, Targets and Datasets"
+      ]
+    },
+    {
+      "question_id": 105,
+      "type": "true_false",
+      "topic": "Features, Targets and Datasets",
+      "prompt": "Adding more and more features always makes patterns easier to find, since the model has more information.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "learner_selected_option": 0,
+      "learner_text": null,
+      "correct_option": 1,
+      "reference_answer": null,
+      "score": 0.0,
+      "max_score": 1.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"False\". With many dimensions, data becomes sparse and patterns get harder to find. This is the curse of dimensionality.",
+      "improvement_areas": [
+        "Features, Targets and Datasets"
+      ]
+    },
+    {
+      "question_id": 106,
+      "type": "short_answer",
+      "topic": "Bias, Variance and Overfitting",
+      "prompt": "As you raise the polynomial order of a regression model, what happens to its bias and to its variance?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "Bias goes down because the model gets more complex and can bend to fit the data.",
+      "correct_option": null,
+      "reference_answer": "Bias goes down because the model is more flexible, while variance goes up because it becomes more sensitive to the training data.",
+      "score": 0.67,
+      "max_score": 1.0,
+      "correctness": "partially_correct",
+      "feedback": "You correctly said bias drops as the model gets more complex and flexible. You missed that variance rises, since the model becomes more sensitive to changes in the training data.",
+      "improvement_areas": [
+        "Variance and model complexity",
+        "Bias variance trade-off"
+      ]
+    },
+    {
+      "question_id": 107,
+      "type": "scenario",
+      "topic": "Validation and Regularization",
+      "prompt": "A data scientist checks the test set after every hyperparameter change and keeps whatever scores best. What is wrong with this, and what should she use instead?",
+      "options": [],
+      "learner_selected_option": null,
+      "learner_text": "She is overfitting to the test set. She should collect more data to test on.",
+      "correct_option": null,
+      "reference_answer": "Using the test set repeatedly risks overfitting to it. She should tune with a validation set or cross-validation and use the test set once at the end.",
+      "score": 0.33,
+      "max_score": 1.0,
+      "correctness": "partially_correct",
+      "feedback": "You correctly spotted the risk of overfitting to the test set. She should tune with a validation set or cross-validation, and use the test set only once on the final model.",
+      "improvement_areas": [
+        "Validation sets and cross-validation",
+        "One-time use of the test set"
+      ]
+    },
+    {
+      "question_id": 108,
+      "type": "mcq",
+      "topic": "Training Mechanics and Evaluation",
+      "prompt": "During training, the error jumps around and never settles near a minimum. Which change is most likely to help?",
+      "options": [
+        "Raise the learning rate to move faster",
+        "Add more epochs at the same settings",
+        "Lower the learning rate to take smaller steps",
+        "Remove momentum so steps stay steady"
+      ],
+      "learner_selected_option": 2,
+      "learner_text": null,
+      "correct_option": 2,
+      "reference_answer": null,
+      "score": 1.0,
+      "max_score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. A learning rate that is too high makes large steps that overshoot good values, so the model may never converge. Smaller steps are more stable.",
+      "improvement_areas": []
+    }
+  ]
+}

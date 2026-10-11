@@ -1,0 +1,312 @@
+{
+  "assessment_id": 16,
+  "learner": {
+    "id": 1,
+    "name": "Sample Learner"
+  },
+  "video": {
+    "id": 20,
+    "title": "The Psychology of People Who Don't Post on Social Media (Explained by a Neuroscientist)"
+  },
+  "generated_at": "2026-10-11T14:37:52+00:00",
+  "overall_performance": {
+    "score": 2.75,
+    "max_score": 8.0,
+    "percentage": 34.4,
+    "level": "needs_work",
+    "questions": 8,
+    "correct": 2,
+    "partially_correct": 1,
+    "incorrect": 5
+  },
+  "topic_analysis": [
+    {
+      "topic": "Four Social Media Posting Types",
+      "questions": 1,
+      "score": 0.0,
+      "max_score": 1.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    },
+    {
+      "topic": "Reward Prediction Error and Likes",
+      "questions": 2,
+      "score": 1.0,
+      "max_score": 2.0,
+      "percentage": 50.0,
+      "level": "developing"
+    },
+    {
+      "topic": "Reinforcement, Extinction and Going Quiet",
+      "questions": 2,
+      "score": 0.75,
+      "max_score": 2.0,
+      "percentage": 37.5,
+      "level": "needs_work"
+    },
+    {
+      "topic": "Passive Viewing and Social Comparison",
+      "questions": 2,
+      "score": 1.0,
+      "max_score": 2.0,
+      "percentage": 50.0,
+      "level": "developing"
+    },
+    {
+      "topic": "Posting for Your Village",
+      "questions": 1,
+      "score": 0.0,
+      "max_score": 1.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    }
+  ],
+  "skill_analysis": [
+    {
+      "bloom_level": "apply",
+      "questions": 4,
+      "score": 0.0,
+      "max_score": 4.0,
+      "percentage": 0.0,
+      "level": "needs_work"
+    },
+    {
+      "bloom_level": "understand",
+      "questions": 3,
+      "score": 1.75,
+      "max_score": 3.0,
+      "percentage": 58.3,
+      "level": "developing"
+    },
+    {
+      "bloom_level": "analyze",
+      "questions": 1,
+      "score": 1.0,
+      "max_score": 1.0,
+      "percentage": 100.0,
+      "level": "strong"
+    }
+  ],
+  "strengths": [
+    "Small dopamine jolt when likes match what you expected",
+    "Group photos feel better to view than solo selfies",
+    "Likes work like the food pellet in Skinner's experiment"
+  ],
+  "weaknesses": [
+    "Excitement comes from likes beating your expectation",
+    "Posting had no effect while viewing solo selfies lowered self-esteem",
+    "Keep posting through early silence to reach your village"
+  ],
+  "improvement_suggestions": [
+    "Rewatch 03:19 to 04:46 on how expectation shapes the dopamine jolt.",
+    "Rewatch 06:46 to 08:10 on why viewing selfies matters more than posting.",
+    "Rewatch 11:20 to 12:25 on posting for your village despite few likes."
+  ],
+  "ai_summary": "You grasp the basic ideas about likes and photo types, but struggle to use them in real cases. Work next on how expectation sets the size of the dopamine jolt.",
+  "recommended_rewatch": [
+    {
+      "topic": "Four Social Media Posting Types",
+      "from": "01:00",
+      "to": "02:24",
+      "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=60s"
+    },
+    {
+      "topic": "Reward Prediction Error and Likes",
+      "from": "03:19",
+      "to": "04:46",
+      "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=199s"
+    },
+    {
+      "topic": "Reinforcement, Extinction and Going Quiet",
+      "from": "04:29",
+      "to": "05:51",
+      "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=269s"
+    },
+    {
+      "topic": "Reinforcement, Extinction and Going Quiet",
+      "from": "05:40",
+      "to": "06:58",
+      "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=340s"
+    },
+    {
+      "topic": "Passive Viewing and Social Comparison",
+      "from": "06:46",
+      "to": "08:10",
+      "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=406s"
+    },
+    {
+      "topic": "Posting for Your Village",
+      "from": "11:20",
+      "to": "12:25",
+      "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=680s"
+    }
+  ],
+  "question_breakdown": [
+    {
+      "question_id": 93,
+      "type": "mcq",
+      "topic": "Four Social Media Posting Types",
+      "bloom_level": "apply",
+      "prompt": "A friend posts several times a day to 3,000 followers. What does the Spanish study suggest about who sees those posts?",
+      "learner_answer": "A large crowd made up mostly of close friends",
+      "correct_answer": "A large crowd of people they barely know",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"A large crowd of people they barely know\". Everything posters had the most followers but knew them the least. The more you broadcast, the bigger and blurrier your audience gets.",
+      "improvement_areas": [
+        "Four Social Media Posting Types"
+      ],
+      "video_segment": {
+        "topic": "Four Social Media Posting Types",
+        "from": "01:00",
+        "to": "02:24",
+        "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=60s"
+      }
+    },
+    {
+      "question_id": 94,
+      "type": "true_false",
+      "topic": "Reward Prediction Error and Likes",
+      "bloom_level": "understand",
+      "prompt": "True or false: getting 200 likes on a post you fully expected to get 200 likes should give only a small dopamine jolt.",
+      "learner_answer": "True",
+      "correct_answer": "True",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Dopamine responds to the gap between what you expected and what you got. With no gap, there is little prediction error, so the jolt is small.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Reward Prediction Error and Likes",
+        "from": "03:19",
+        "to": "04:46",
+        "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=199s"
+      }
+    },
+    {
+      "question_id": 95,
+      "type": "mcq",
+      "topic": "Reward Prediction Error and Likes",
+      "bloom_level": "apply",
+      "prompt": "Two people each get 40 likes on a post. Who is most likely to feel a jolt of excitement?",
+      "learner_answer": "The one who expected about 100 likes",
+      "correct_answer": "The one who expected about 10 likes",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"The one who expected about 10 likes\". Excitement comes when reality beats expectation. Forty likes beats an expectation of 10 but falls short of 100, which would cause a dip.",
+      "improvement_areas": [
+        "Reward Prediction Error and Likes"
+      ],
+      "video_segment": {
+        "topic": "Reward Prediction Error and Likes",
+        "from": "03:19",
+        "to": "04:46",
+        "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=199s"
+      }
+    },
+    {
+      "question_id": 96,
+      "type": "short_answer",
+      "topic": "Reinforcement, Extinction and Going Quiet",
+      "bloom_level": "understand",
+      "prompt": "How does Skinner's pigeon experiment explain why someone gradually stops posting on social media?",
+      "learner_answer": "When you stop getting likes it is like the pigeon not getting food any more, so you slowly stop posting.",
+      "correct_answer": "Posting is like pecking the lever and likes are the food pellet. When posts keep getting few likes, the behavior fades through extinction, often without the person ever deciding to stop.",
+      "score": 0.75,
+      "correctness": "partially_correct",
+      "feedback": "You matched likes to the food pellet and saw that posting fades when rewards stop. You missed that this fading, called extinction, happens without the person ever deciding to quit.",
+      "improvement_areas": [
+        "Stopping without a conscious decision"
+      ],
+      "video_segment": {
+        "topic": "Reinforcement, Extinction and Going Quiet",
+        "from": "04:29",
+        "to": "05:51",
+        "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=269s"
+      }
+    },
+    {
+      "question_id": 97,
+      "type": "true_false",
+      "topic": "Reinforcement, Extinction and Going Quiet",
+      "bloom_level": "understand",
+      "prompt": "True or false: hiding like counts helps mainly because you can never see your likes again.",
+      "learner_answer": "True",
+      "correct_answer": "False",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "Incorrect. The correct answer is \"False\". You can still check likes on purpose. The point is that rewards stop arriving on the app's schedule and arrive on yours, so the app can't condition you.",
+      "improvement_areas": [
+        "Reinforcement, Extinction and Going Quiet"
+      ],
+      "video_segment": {
+        "topic": "Reinforcement, Extinction and Going Quiet",
+        "from": "05:40",
+        "to": "06:58",
+        "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=340s"
+      }
+    },
+    {
+      "question_id": 98,
+      "type": "scenario",
+      "topic": "Passive Viewing and Social Comparison",
+      "bloom_level": "apply",
+      "prompt": "Lena never posts but scrolls through strangers' solo selfies for an hour every day. She says not posting keeps her safe. How would the 2016 study respond?",
+      "learner_answer": "The study would say she should start posting more so that she feels included.",
+      "correct_answer": "Not posting doesn't protect her, since posting had no measurable effect. Viewing lots of selfies was linked to lower self-esteem and life satisfaction because it triggers upward comparison.",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "The study found posting had no measurable effect either way. Viewing lots of solo selfies was linked to lower self-esteem and life satisfaction through upward social comparison.",
+      "improvement_areas": [
+        "Posting had no measurable effect",
+        "Selfie viewing and social comparison"
+      ],
+      "video_segment": {
+        "topic": "Passive Viewing and Social Comparison",
+        "from": "06:46",
+        "to": "08:10",
+        "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=406s"
+      }
+    },
+    {
+      "question_id": 99,
+      "type": "true_false",
+      "topic": "Passive Viewing and Social Comparison",
+      "bloom_level": "analyze",
+      "prompt": "True or false: a non-poster whose feed is mostly group photos of friends would likely feel better than one viewing solo selfies.",
+      "learner_answer": "True",
+      "correct_answer": "True",
+      "score": 1.0,
+      "correctness": "correct",
+      "feedback": "Correct. Viewing group photos was linked to higher self-esteem and life satisfaction. Group photos look like belonging, while solo selfies invite upward comparison.",
+      "improvement_areas": [],
+      "video_segment": {
+        "topic": "Passive Viewing and Social Comparison",
+        "from": "07:56",
+        "to": "09:12",
+        "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=476s"
+      }
+    },
+    {
+      "question_id": 100,
+      "type": "scenario",
+      "topic": "Posting for Your Village",
+      "bloom_level": "apply",
+      "prompt": "Raj starts posting photos of his beetle collection to find other collectors. After two weeks, his posts get almost no likes. What should Raj do next, based on the video's advice?",
+      "learner_answer": "He should delete those posts and switch to things that are more popular, like pets.",
+      "correct_answer": "Raj should keep posting through the early silence and post for his village, not for likes. Quitting now would let a lack of reward train him into silence before his people find him.",
+      "score": 0.0,
+      "correctness": "incorrect",
+      "feedback": "The video advises Raj to keep posting through the early silence for his village, not for likes. He shouldn't let the like count judge his posts, since quitting is extinction and hides him from his people.",
+      "improvement_areas": [
+        "Posting for your village",
+        "Pushing through early silence"
+      ],
+      "video_segment": {
+        "topic": "Posting for Your Village",
+        "from": "11:20",
+        "to": "12:25",
+        "url": "https://www.youtube.com/watch?v=5pcw25mQxCg&t=680s"
+      }
+    }
+  ]
+}
