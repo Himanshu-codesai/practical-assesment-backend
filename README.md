@@ -70,7 +70,7 @@ All endpoints: [`docs/API.md`](docs/API.md) and [`docs/openapi.json`](docs/opena
 | Queue and worker, not tasks inside the API | Slow work survives a crash and is retried; the API stays fast | Two more services |
 | Captions first, Whisper as fallback | Captions are instant and free; Whisper covers videos without them | Whisper is slow on CPU |
 | Hybrid retrieval | Meaning search handles different wording; keyword search handles names and numbers | Two vectors per chunk |
-| A context line in front of each chunk before embedding | A chunk keeps its video and topic | None: no extra LLM call |
+| A context line in front of each chunk before embedding | A chunk keeps its video and topic | No extra LLM call. No measurable gain yet on my small tests |
 | PostgreSQL is the source of truth, Qdrant holds only vectors | The index can be rebuilt at any time | Two stores to keep in step |
 | Every LLM reply is validated against a schema | Bad output is corrected once or rejected | One extra call when it fails |
 | Code grades choice questions, the LLM grades written ones | Exact and free where possible; judgement only where needed | LLM grading is not yet checked against human grading |

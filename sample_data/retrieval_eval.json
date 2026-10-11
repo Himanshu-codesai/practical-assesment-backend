@@ -1,15 +1,19 @@
 [
-  {"video": "neural network", "question": "Which function is used to squeeze a neuron's weighted sum into the range between 0 and 1?", "expect_any": ["sigmoid"]},
-  {"video": "neural network", "question": "What does ReLU stand for?", "expect_any": ["rectified linear"]},
-  {"video": "neural network", "question": "How many input neurons are needed for a 28 by 28 pixel image?", "expect_any": ["784"]},
-  {"video": "neural network", "question": "What does the bias of a neuron control?", "expect_any": ["bias"]},
-  {"video": "neural network", "question": "How many weights and biases does the whole network have in total?", "expect_any": ["13,000"]},
-  {"video": "calculus", "question": "How can the area of a circle be found by cutting it into thin concentric pieces?", "expect_any": ["rings"]},
-  {"video": "calculus", "question": "Which theorem links integrals and derivatives?", "expect_any": ["fundamental theorem"]},
-  {"video": "calculus", "question": "What is the name of the tool that measures how sensitive a function is to small changes in its input?", "expect_any": ["derivative"]},
-  {"video": "Vectors", "question": "How does a computer science student think about vectors?", "expect_any": ["ordered"]},
-  {"video": "Vectors", "question": "What is multiplying a vector by a number called?", "expect_any": ["scaling", "scalar"]},
-  {"video": "Vectors", "question": "Where does the tail of a vector sit in linear algebra?", "expect_any": ["origin"]},
-  {"video": "Photosynthesis", "question": "Which stage of photosynthesis builds sugar, and where does it happen?", "expect_any": ["Calvin cycle"]},
-  {"video": "Photosynthesis", "question": "Why does photosynthesis slow down on a bright but very cold day?", "expect_any": ["limiting factor"]}
+  {"video": "heart", "question": "What is the relaxing phase of the heartbeat called?", "expect_any": ["relaxing is called"]},
+  {"video": "heart", "question": "Why is the heart split into a right side and a left side?", "expect_any": ["oxygen poor blood together"]},
+
+  {"video": "machine learning", "question": "How much does each extra square foot add to the house price?", "expect_any": ["$200"]},
+  {"video": "machine learning", "question": "What share of machine learning applications use supervised learning?", "expect_any": ["70%"]},
+  {"video": "machine learning", "question": "Which kind of learning is compared to training a pet?", "expect_any": ["training a pet"]},
+  {"video": "machine learning", "question": "Which two methods put features on the same scale?", "expect_any": ["standardization"]},
+  {"video": "machine learning", "question": "What do we call random errors in data that are not part of the real pattern?", "expect_any": ["noise refers"]},
+  {"video": "machine learning", "question": "What is a setting that is chosen before training begins, such as batch size?", "expect_any": ["hyperparameter is"]},
+  {"video": "machine learning", "question": "Which version of gradient descent is less likely to get stuck in local minima?", "expect_any": ["momentum based"]},
+  {"video": "machine learning", "question": "Which metrics are used to judge a classification model?", "expect_any": ["F1 score"]},
+
+  {"video": "psychology", "question": "What percentage of people almost never post?", "expect_any": ["37 percent"]},
+  {"video": "psychology", "question": "What did the psychologist put inside his box in the 1930s?", "expect_any": ["Skinner built a box"]},
+  {"video": "psychology", "question": "Why do one-person highlight reels make you feel worse about yourself?", "expect_any": ["compares upward"]},
+  {"video": "psychology", "question": "What word does the video use for a behavior that fades when rewards stop?", "expect_any": ["It's extinction"]},
+  {"video": "psychology", "question": "What are the two rules for posting on your own terms?", "expect_any": ["not for the pellet"]}
 ]

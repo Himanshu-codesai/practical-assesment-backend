@@ -1,22 +1,15 @@
 [
   {
-    "title": "Photosynthesis (The Dr. Binocs Show)",
-    "source_url": "https://www.youtube.com/watch?v=D1Ymc311XS8"
+    "title": "The Heart and Circulatory System - How They Work (Mayo Clinic)",
+    "source_url": "https://www.youtube.com/watch?v=CWFyxn0qDEU"
   },
   {
-    "title": "But what is a neural network? (3Blue1Brown)",
-    "source_url": "https://www.youtube.com/watch?v=aircAruvnKk"
+    "title": "All Machine Learning Concepts Explained in 22 Minutes (Infinite Codes)",
+    "source_url": "https://www.youtube.com/watch?v=Fa_V9fP2tpU"
   },
   {
-    "title": "The essence of calculus (3Blue1Brown)",
-    "source_url": "https://www.youtube.com/watch?v=WUvTyaaNkzM"
-  },
-  {
-    "title": "Vectors, Essence of linear algebra chapter 1 (3Blue1Brown)",
-    "source_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
-  },
-  {
-    "title": "Photosynthesis in two minutes (sample audio lecture)",
-    "file": "photosynthesis_lecture.mp3"
+    "title": "The Psychology of People Who Don't Post on Social Media (Dr. Sahar Yousef)",
+    "source_url": "https://www.youtube.com/watch?v=5pcw25mQxCg",
+    "transcript_method": "whisper"
   }
 ]
